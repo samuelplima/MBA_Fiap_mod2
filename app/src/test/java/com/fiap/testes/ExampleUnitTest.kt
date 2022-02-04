@@ -1,4 +1,4 @@
-package com.fiap.vivon
+package com.fiap.testes
 
 import org.junit.Test
 
