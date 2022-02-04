@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">VivoN</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">CPF ou CNPJ</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Olá! Seja Bem Vindo ao Nosso App</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="cadastro_explicacao">Informe seu <b> <font color='#8128B4'>CPF</font></b> ou <b> <font color='#8128B4'>CNPJ</font></b> para checarmos se já possui cadastro.</string>
+    <string name="cpf_ou_cnpj">CPF ou CNPJ</string>
+
+</resources>
