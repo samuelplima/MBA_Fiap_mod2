@@ -6,9 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.fiap.vivo.databinding.FragmentFirstBinding
 import com.fiap.vivo.presenter.CheckCpfCnpj
 import com.fiap.vivo.presenter.MaskUnmask
-import com.fiap.vivon.databinding.FragmentFirstBinding
+
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
