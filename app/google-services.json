@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "2007791069",
+    "project_id": "fiapvivo",
+    "storage_bucket": "fiapvivo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2007791069:android:3e2fbf2573058e4fa2f234",
+        "android_client_info": {
+          "package_name": "com.fiap.vivo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "2007791069-gtq1s8m84ejmtlgnvqgjcsmc8dktrbbe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCyHNkAdk9o8m2XKsbet6212l8a8zsiVU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "2007791069-gtq1s8m84ejmtlgnvqgjcsmc8dktrbbe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2007791069:android:fcc846a218856afda2f234",
+        "android_client_info": {
+          "package_name": "com.fiap.vivon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "2007791069-gtq1s8m84ejmtlgnvqgjcsmc8dktrbbe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCyHNkAdk9o8m2XKsbet6212l8a8zsiVU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "2007791069-gtq1s8m84ejmtlgnvqgjcsmc8dktrbbe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
