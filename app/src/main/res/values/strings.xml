@@ -11,5 +11,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="cadastro_explicacao">Informe seu <b> <font color='#8128B4'>CPF</font></b> ou <b> <font color='#8128B4'>CNPJ</font></b> para checarmos se já possui cadastro.</string>
     <string name="cpf_ou_cnpj">CPF ou CNPJ</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

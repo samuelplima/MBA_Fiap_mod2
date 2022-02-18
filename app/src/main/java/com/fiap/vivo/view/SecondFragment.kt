@@ -37,6 +37,7 @@ class SecondFragment : Fragment() {
 
         if (identificacaoPersistencia != null) {
             binding.cpfCnpj.text = identificacaoPersistencia.getString("documento","")
+            binding.textView2.text = "Já tem cadastro, Faça Login!"
         }
 
 
