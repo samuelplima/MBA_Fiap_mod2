@@ -1,5 +1,6 @@
 package com.fiap.vivo.view
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.fiap.vivo.R
 import com.fiap.vivo.databinding.FragmentSecondBinding
+
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -30,6 +32,13 @@ class SecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
+
+        if (identificacaoPersistencia != null) {
+            binding.cpfCnpj.text = identificacaoPersistencia.getString("documento","")
+        }
+
 
         binding.buttonSecond.setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)

@@ -41,7 +41,7 @@
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/cpf_ou_cnpj"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/button_first"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,10 +66,13 @@
         android:id="@+id/docCheck"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="63dp"
         android:gravity="center"
         android:textSize="20sp"
-        tools:layout_editor_absoluteX="-16dp"
-        tools:layout_editor_absoluteY="394dp" />
+        app:layout_constraintBottom_toTopOf="@+id/button_first"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cpfCnpj" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

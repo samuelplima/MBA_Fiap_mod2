@@ -1,11 +1,15 @@
 package com.fiap.vivo.view
 
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
+import androidx.navigation.fragment.findNavController
+import com.fiap.vivo.R
 import com.fiap.vivo.databinding.FragmentFirstBinding
 import com.fiap.vivo.presenter.CheckCpfCnpj
 import com.fiap.vivo.presenter.MaskUnmask
@@ -42,12 +46,21 @@ class FirstFragment : Fragment() {
             binding.buttonFirst.setOnClickListener {
                     when(binding.cpfCnpj.text.length){
                         14 -> {
-                            if(checkCpfCnpj.checkCpf(binding.cpfCnpj.text.toString())){
-                             //   binding.docCheck.text = "CPF válido"
-                             //   binding.docCheck.setTextColor(Color.GREEN)
-                            //chamar metodo que verifica o banco
-                            }
-                            else{
+                            if (checkCpfCnpj.checkCpf(binding.cpfCnpj.text.toString())) {
+                                //  binding.docCheck.text = "CPF válido"
+                                //  binding.docCheck.setTextColor(Color.GREEN)
+                                //chamar metodo que verifica o banco
+
+                                val identificacaoPersistencia =
+                                    this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
+                                val editor = identificacaoPersistencia?.edit()
+                                if (editor != null) {
+                                    editor.putString("documento", binding.cpfCnpj.text.toString())
+                                    editor.apply()
+                                }
+                                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+
+                            } else {
                                 binding.docCheck.text = "CPF inválido"
                                 binding.docCheck.setTextColor(Color.RED)
                             }
