@@ -1,4 +1,7 @@
 <resources>
+    <!--  Footer Text  -->
+    <string name="footer_text">By: Grupo A</string>
+
     <string name="app_name">VivoN</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
