@@ -1,7 +1,6 @@
 package com.fiap.vivo.model
 
 import androidx.lifecycle.LiveData
-import kotlinx.coroutines.newFixedThreadPoolContext
 
 class UserRepository(private val userDAO: UserDAO) {
 
@@ -13,5 +12,9 @@ class UserRepository(private val userDAO: UserDAO) {
 
     fun findUser(cpfCnpjDB: String) : String {
         return userDAO.findUser(cpfCnpjDB)
+    }
+
+    fun findName(cpfCnpjDB: String) : String {
+        return userDAO.findName(cpfCnpjDB)
     }
 }

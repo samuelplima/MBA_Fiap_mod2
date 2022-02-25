@@ -28,6 +28,11 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
             return repository.findUser(cpfCnpjDB)
     }
 
+    fun findName(cpfCnpjDB: String) : String {
+        return repository.findName(cpfCnpjDB)
+    }
+
+
 
 }
 
