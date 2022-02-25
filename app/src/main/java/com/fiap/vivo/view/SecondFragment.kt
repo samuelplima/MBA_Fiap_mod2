@@ -2,14 +2,17 @@ package com.fiap.vivo.view
 
 import android.content.Context
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.fiap.vivo.R
 import com.fiap.vivo.databinding.FragmentSecondBinding
+import com.fiap.vivo.model.User
 import com.fiap.vivo.model.UserViewModel
 
 
@@ -38,7 +41,6 @@ open class SecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         var cnpjCpf = ""
         val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
         if (identificacaoPersistencia != null) {
@@ -47,10 +49,35 @@ open class SecondFragment : Fragment() {
         binding.textView2.text = mUserViewModel.findName(cnpjCpf)
 
         binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+            login()
         }
     }
 
+    private fun login(){
+        val email = binding.editTextTextEmailAddress2.text.toString()
+        val senha = binding.editTextTextPassword.text.toString()
+
+        val emailDB = mUserViewModel.findEmail(email)
+        val senhaDB = mUserViewModel.findPassword(senha)
+
+        if (inputCheck(email, senha)) {
+            //create user object
+            if(email == emailDB && senha == senhaDB){
+                findNavController().navigate(R.id.action_SecondFragment_to_fourthFragment)
+                Toast.makeText(requireContext(), "Logado com sucesso!", Toast.LENGTH_LONG).show()
+            }
+        } else {
+            Toast.makeText(
+                requireContext(),
+                "Por favor preencha todos os campos!",
+                Toast.LENGTH_LONG
+            ).show()
+        }
+    }
+
+    private fun inputCheck(email : String, senha : String): Boolean {
+        return !(TextUtils.isEmpty(email) && TextUtils.isEmpty(senha))
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

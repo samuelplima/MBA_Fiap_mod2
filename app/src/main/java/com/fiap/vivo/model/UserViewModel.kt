@@ -25,14 +25,24 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun findUser(cpfCnpjDB: String) : String {
-            return repository.findUser(cpfCnpjDB)
+        return repository.findUser(cpfCnpjDB)
     }
 
     fun findName(cpfCnpjDB: String) : String {
         return repository.findName(cpfCnpjDB)
     }
 
+    fun findEmail(emailDB: String): String{
+        return repository.findEmail(emailDB)
+    }
 
+    fun findPassword(senhaDB: String): String{
+        return repository.findPassword(senhaDB)
+    }
+
+    fun findEmailWithCpfCnpj(cpfCnpjDB: String) : String{
+        return repository.findEmailWithCpfCnpj(cpfCnpjDB)
+    }
 
 }
 

@@ -28,9 +28,6 @@ class FirstFragment : Fragment() {
 
     val checkCpfCnpj = CheckCpfCnpj()
 
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -88,8 +85,6 @@ class FirstFragment : Fragment() {
             if (checkData) {
                 if (cpfCnpjUser == cpfCnpjDB) {
                     sharedPreferrences()
-                    Toast.makeText(requireContext(), cpfCnpjUser , Toast.LENGTH_LONG).show()
-                    Toast.makeText(requireContext(), name , Toast.LENGTH_LONG).show()
                     findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
                 } else {
                     sharedPreferrences()
@@ -97,7 +92,6 @@ class FirstFragment : Fragment() {
                 }
             }
         }
-
     }
 
     fun sharedPreferrences(){

@@ -8,50 +8,76 @@
 
 
     <EditText
-        android:id="@+id/nome"
+        android:id="@+id/senha"
         android:layout_width="238dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="20dp"
-        android:hint="nome"
-        app:layout_constraintBottom_toTopOf="@+id/cpfCnpj"
+        android:layout_marginBottom="36dp"
+        android:hint="senha"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSave"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/nome"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
+        android:hint="Nome"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/senha"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/cpfCnpj"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/buttonSave"
         android:layout_width="205dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="302dp"
+        android:layout_marginBottom="164dp"
         android:text="Salvar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cpfCnpj"
+        app:layout_constraintTop_toBottomOf="@+id/senha"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="111dp"
+        android:layout_width="169dp"
         android:layout_height="0dp"
-        android:layout_marginStart="126dp"
-        android:layout_marginTop="79dp"
-        android:layout_marginBottom="77dp"
-        android:text="Tela de cadastro"
-        app:layout_constraintBottom_toTopOf="@+id/nome"
+        android:layout_marginTop="82dp"
+        android:layout_marginBottom="59dp"
+        android:text="Cadastre-se"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/cpfCnpj"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/cpfCnpj"
-        android:layout_width="179dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="70dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSave"
+        android:layout_width="238dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
+        android:hint="Cpf/Cnpj"
+        android:textSize="23dp"
+        app:layout_constraintBottom_toTopOf="@+id/nome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="239dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/senha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nome" />

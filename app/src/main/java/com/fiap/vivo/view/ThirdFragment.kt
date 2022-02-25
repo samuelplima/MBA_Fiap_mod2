@@ -42,6 +42,7 @@ class ThirdFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         identificacaoPersistencia()
 
         binding.buttonSave.setOnClickListener {
@@ -49,7 +50,6 @@ class ThirdFragment : Fragment() {
         }
 
     }
-
     fun identificacaoPersistencia(){
         val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
         if (identificacaoPersistencia != null) {
@@ -58,19 +58,17 @@ class ThirdFragment : Fragment() {
     }
 
     private fun insertDataToDatabase() {
-
-
         val nome = binding.nome.text.toString()
+        val email = binding.editTextTextEmailAddress.text.toString()
+        val senha = binding.senha.text.toString()
         var cnpjCpf = ""
         val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
         if (identificacaoPersistencia != null) {
             cnpjCpf = identificacaoPersistencia.getString("documento", "").toString()
         }
-
-
-        if (inputCheck(nome, cnpjCpf)) {
+        if (inputCheck(nome, cnpjCpf, email, senha)) {
             //create user object
-            val user = User(0, nome, cnpjCpf)
+            val user = User(0, nome, cnpjCpf, email, senha)
             //add data to database
             mUserViewModel.addUser(user)
             Toast.makeText(requireContext(), "Salvo com sucesso!", Toast.LENGTH_LONG).show()
@@ -84,9 +82,13 @@ class ThirdFragment : Fragment() {
             ).show()
         }
     }
+    private fun inputCheck(nome: String, cnpjCpf: String, email : String, senha : String): Boolean {
+        return !(TextUtils.isEmpty(nome) && TextUtils.isEmpty(cnpjCpf) && TextUtils.isEmpty(email) && TextUtils.isEmpty(senha))
+    }
 
-    private fun inputCheck(nome: String, cnpjCpf: String): Boolean {
-        return !(TextUtils.isEmpty(nome) && TextUtils.isEmpty(cnpjCpf))
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

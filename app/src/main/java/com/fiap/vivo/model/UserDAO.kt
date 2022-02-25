@@ -21,8 +21,13 @@ interface UserDAO {
     @Query("SELECT name FROM user_table WHERE cpfCnpj =:cpfCnpjDB")
     fun findName(cpfCnpjDB : String ) : String
 
+    @Query("SELECT email FROM user_table where email =:emailDB")
+    fun findEmail(emailDB: String) : String
 
+    @Query("SELECT senha FROM user_table where senha =:senhaDB")
+    fun findPassword(senhaDB: String) : String
 
-
+    @Query("SELECT email FROM user_table where cpfCnpj =:cpfCnpjDB")
+    fun findEmailWithCpfCnpj(cpfCnpjDB: String) : String
 }
 

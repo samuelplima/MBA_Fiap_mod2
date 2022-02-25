@@ -9,6 +9,8 @@ data class User (
     val id: Int,
     val name: String,
     val cpfCnpj: String,
+    val email: String,
+    val senha: String
 )
 
 

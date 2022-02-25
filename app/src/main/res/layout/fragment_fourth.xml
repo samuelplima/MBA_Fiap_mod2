@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.FourthFragment">
+
+    <TextView
+        android:id="@+id/saudacao"
+        android:layout_width="213dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginBottom="55dp"
+        android:text="Seja Bem-Vindo(a)"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/nome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nome"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="28dp"
+        android:text="TextView"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/cpfOUcnpj"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nome_"
+        app:layout_constraintTop_toBottomOf="@+id/saudacao" />
+
+    <TextView
+        android:id="@+id/cpfOUcnpj"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="28dp"
+        android:text="TextView"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cpf_"
+        app:layout_constraintTop_toBottomOf="@+id/nome" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="254dp"
+        android:text="TextView"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/email_"
+        app:layout_constraintTop_toBottomOf="@+id/cpfOUcnpj" />
+
+    <TextView
+        android:id="@+id/nome_"
+        android:layout_width="79dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="229dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="28dp"
+        android:text="Nome:"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/cpf_"
+        app:layout_constraintEnd_toStartOf="@+id/nome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cpf_"
+        android:layout_width="114dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="28dp"
+        android:text="Cpf/Cnpj:"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/email_"
+        app:layout_constraintEnd_toStartOf="@+id/cpfOUcnpj"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nome_" />
+
+    <TextView
+        android:id="@+id/email_"
+        android:layout_width="90dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="252dp"
+        android:text="Email:"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cpf_" />
+</androidx.constraintlayout.widget.ConstraintLayout>
