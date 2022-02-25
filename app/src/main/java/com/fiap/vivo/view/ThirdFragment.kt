@@ -59,8 +59,15 @@ class ThirdFragment : Fragment() {
     }
 
     private fun insertDataToDatabase() {
+
+
         val nome = binding.nome.text.toString()
-        val cnpjCpf = binding.cnpjCpf.text.toString()
+        var cnpjCpf = ""
+        val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
+        if (identificacaoPersistencia != null) {
+            cnpjCpf = identificacaoPersistencia.getString("documento", "").toString()
+        }
+
 
         if (inputCheck(nome, cnpjCpf)) {
             //create user object

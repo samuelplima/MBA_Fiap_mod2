@@ -11,27 +11,12 @@
         android:id="@+id/nome"
         android:layout_width="238dp"
         android:layout_height="0dp"
-        android:layout_marginStart="77dp"
-        android:layout_marginEnd="77dp"
-        android:layout_marginBottom="18dp"
+        android:layout_marginBottom="20dp"
         android:hint="nome"
-        app:layout_constraintBottom_toTopOf="@+id/cnpjCpf"
-        app:layout_constraintEnd_toEndOf="@+id/cpfCnpj"
+        app:layout_constraintBottom_toTopOf="@+id/cpfCnpj"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cpfCnpj"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <EditText
-        android:id="@+id/cnpjCpf"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="40dp"
-        android:hint="CPF ou CNPJ"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSave"
-        app:layout_constraintEnd_toEndOf="@+id/nome"
-        app:layout_constraintStart_toStartOf="@+id/nome"
-        app:layout_constraintTop_toBottomOf="@+id/nome"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Button
@@ -43,32 +28,32 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cnpjCpf"
+        app:layout_constraintTop_toBottomOf="@+id/cpfCnpj"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="111dp"
         android:layout_height="0dp"
-        android:layout_marginStart="110dp"
+        android:layout_marginStart="126dp"
         android:layout_marginTop="79dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="77dp"
         android:text="Tela de cadastro"
-        app:layout_constraintBottom_toTopOf="@+id/cpfCnpj"
-        app:layout_constraintStart_toStartOf="@+id/cpfCnpj"
+        app:layout_constraintBottom_toTopOf="@+id/nome"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/cpfCnpj"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="179dp"
+        android:layout_height="26dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="33dp"
+        android:layout_marginBottom="70dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/nome"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSave"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/nome" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
