@@ -56,12 +56,13 @@ open class SecondFragment : Fragment() {
     private fun login(){
         val email = binding.editTextTextEmailAddress2.text.toString()
         val senha = binding.editTextTextPassword.text.toString()
-
         val emailDB = mUserViewModel.findEmail(email)
         val senhaDB = mUserViewModel.findPassword(senha)
 
+        if(emailDB == null || senhaDB == null) {
+            Toast.makeText(requireContext(), "Email ou senha invalido", Toast.LENGTH_LONG).show()
+        }
         if (inputCheck(email, senha)) {
-            //create user object
             if(email == emailDB && senha == senhaDB){
                 findNavController().navigate(R.id.action_SecondFragment_to_fourthFragment)
                 Toast.makeText(requireContext(), "Logado com sucesso!", Toast.LENGTH_LONG).show()

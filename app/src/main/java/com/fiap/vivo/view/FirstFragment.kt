@@ -51,7 +51,6 @@ class FirstFragment : Fragment() {
             var checkData: Boolean
             val cpfCnpjDB = binding.cpfCnpj.text.toString()
             val cpfCnpjUser = findUser(cpfCnpjDB)
-            val name = findName(cpfCnpjDB)
 
 
             when (binding.cpfCnpj.text.length) {
@@ -109,10 +108,6 @@ class FirstFragment : Fragment() {
 
     fun findUser(cpfCnpjDB : String) : String{
         return mUserViewModel.findUser(cpfCnpjDB)
-    }
-
-    fun findName(cpfCnpjDB: String) : String{
-        return mUserViewModel.findName(cpfCnpjDB)
     }
 
     override fun onDestroyView() {
