@@ -29,5 +29,9 @@ interface UserDAO {
 
     @Query("SELECT email FROM user_table where cpfCnpj =:cpfCnpjDB")
     fun findEmailWithCpfCnpj(cpfCnpjDB: String) : String
+
+    @Query("SELECT planos FROM user_table where cpfCnpj =:cpfCnpjDB")
+    fun findPlanos(cpfCnpjDB: String) : String
+
 }
 

@@ -30,5 +30,8 @@ class UserRepository(private val userDAO: UserDAO) {
        return userDAO.findEmailWithCpfCnpj(cpfCnpjDB)
    }
 
+    fun findPlanos(cpfCnpjDB: String) : String{
+        return userDAO.findPlanos(cpfCnpjDB)
+    }
 
 }

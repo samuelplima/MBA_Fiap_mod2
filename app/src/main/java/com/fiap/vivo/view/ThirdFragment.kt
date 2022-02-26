@@ -61,14 +61,15 @@ class ThirdFragment : Fragment() {
         val nome = binding.nome.text.toString()
         val email = binding.editTextTextEmailAddress.text.toString()
         val senha = binding.senha.text.toString()
+        val plano = binding.editTextTextPersonName.text.toString().uppercase()
         var cnpjCpf = ""
         val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
         if (identificacaoPersistencia != null) {
             cnpjCpf = identificacaoPersistencia.getString("documento", "").toString()
         }
-        if (inputCheck(nome, cnpjCpf, email, senha)) {
+        if (inputCheck(nome, cnpjCpf, email, plano, senha)) {
             //create user object
-            val user = User(0, nome, cnpjCpf, email, senha)
+            val user = User(0, nome, cnpjCpf, email, plano, senha)
             //add data to database
             mUserViewModel.addUser(user)
             Toast.makeText(requireContext(), "Salvo com sucesso!", Toast.LENGTH_LONG).show()
@@ -82,8 +83,8 @@ class ThirdFragment : Fragment() {
             ).show()
         }
     }
-    private fun inputCheck(nome: String, cnpjCpf: String, email : String, senha : String): Boolean {
-        return !(TextUtils.isEmpty(nome) && TextUtils.isEmpty(cnpjCpf) && TextUtils.isEmpty(email) && TextUtils.isEmpty(senha))
+    private fun inputCheck(nome: String, cnpjCpf: String, email : String, plano : String, senha : String): Boolean {
+        return !(TextUtils.isEmpty(nome) && TextUtils.isEmpty(cnpjCpf) && TextUtils.isEmpty(email)  && TextUtils.isEmpty(plano) && TextUtils.isEmpty(senha))
     }
 
     override fun onDestroyView() {

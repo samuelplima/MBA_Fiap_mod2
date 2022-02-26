@@ -44,5 +44,9 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
         return repository.findEmailWithCpfCnpj(cpfCnpjDB)
     }
 
+    fun findPlanos(cpfCnpjDB: String) : String{
+        return repository.findPlanos(cpfCnpjDB)
+    }
+
 }
 
