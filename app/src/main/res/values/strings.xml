@@ -7,6 +7,12 @@
     <string name="cpf_cnpj_field_text">Informe seu <b> <font color='#650199'>CPF</font></b> ou <b> <font color='#650199'>CNPJ</font></b> para checarmos se já possui cadastro.</string>
     <string name="search_login_button_text">Consultar</string>
 
+    <!--  Registration Page  -->
+    <string name="registration_page_title"><u>Primeiro Acesso</u></string>
+    <string name="registration_page_name">Seu Nome</string>
+    <string name="registration_page_email">Seu E-mail</string>
+    <string name="registration_page_password">Senha</string>
+    <string name="registration_page_save">Cadastrar</string>
 
     <string name="app_name">VivoN</string>
     <string name="action_settings">Settings</string>

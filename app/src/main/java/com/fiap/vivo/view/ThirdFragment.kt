@@ -45,7 +45,7 @@ class ThirdFragment : Fragment() {
 
         identificacaoPersistencia()
 
-        binding.buttonSave.setOnClickListener {
+        binding.registrationButtonSave.setOnClickListener {
             insertDataToDatabase()
         }
 
@@ -53,14 +53,14 @@ class ThirdFragment : Fragment() {
     fun identificacaoPersistencia(){
         val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
         if (identificacaoPersistencia != null) {
-            binding.cpfCnpj.text = identificacaoPersistencia.getString("documento", "")
+            binding.registrationCpfCnpj.text = identificacaoPersistencia.getString("documento", "")
         }
     }
 
     private fun insertDataToDatabase() {
-        val nome = binding.nome.text.toString()
-        val email = binding.editTextTextEmailAddress.text.toString()
-        val senha = binding.senha.text.toString()
+        val nome = binding.registrationNameField.text.toString()
+        val email = binding.registrationEmailField.text.toString()
+        val senha = binding.registrationPasswordField.text.toString()
         var cnpjCpf = ""
         val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
         if (identificacaoPersistencia != null) {

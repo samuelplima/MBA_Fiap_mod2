@@ -26,7 +26,7 @@
         <item name="android:textColor">@color/primary</item>
         <item name="android:fontFamily">@font/baloo_bhai_2</item>
         <item name="android:textSize">30dp</item>
-        <item name="lineHeight">30dp</item>
+        <item name="lineHeight">40dp</item>
     </style>
 
     <style name="default.layout.text" parent="TextAppearance.AppCompat.Small">

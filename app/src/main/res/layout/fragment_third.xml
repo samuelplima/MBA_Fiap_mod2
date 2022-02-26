@@ -1,85 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ThirdFragment">
+    tools:context="com.fiap.vivo.view.ThirdFragment">
 
+    <TextView
+        android:id="@+id/registrationPageTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/registration_page_title"
+        style="@style/default.layout.title"/>
+
+    <TextView
+        android:id="@+id/registrationCpfCnpj"
+        android:layout_below="@id/registrationPageTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cpf/Cnpj"
+        android:textAlignment="center"
+        android:layout_marginTop="30dp"
+        style="@style/default.layout.title"/>
+
+    <TextView
+        android:id="@+id/registrationNameLabel"
+        android:layout_below="@id/registrationCpfCnpj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/registration_page_name"
+        style="@style/default.layout.text"/>
 
     <EditText
-        android:id="@+id/senha"
-        android:layout_width="238dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="36dp"
-        android:hint="senha"
+        android:id="@+id/registrationNameField"
+        android:layout_below="@id/registrationNameLabel"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/edit_text_background"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="4dp"
+        tools:ignore="TouchTargetSizeCheck"/>
+
+    <TextView
+        android:id="@+id/registrationEmailLabel"
+        android:layout_below="@id/registrationNameField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/registration_page_email"
+        style="@style/default.layout.text"/>
+
+    <EditText
+        android:id="@+id/registrationEmailField"
+        android:layout_below="@id/registrationEmailLabel"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/edit_text_background"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="4dp"
+        android:inputType="textEmailAddress"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/registrationPasswordLabel"
+        android:layout_below="@id/registrationEmailField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/registration_page_email"
+        style="@style/default.layout.text"/>
+
+    <EditText
+        android:id="@+id/registrationPasswordField"
+        android:layout_below="@id/registrationPasswordLabel"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/edit_text_background"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/buttonSave"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <EditText
-        android:id="@+id/nome"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="24dp"
-        android:hint="Nome"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintEnd_toEndOf="@+id/senha"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/cpfCnpj"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck"/>
 
     <Button
-        android:id="@+id/buttonSave"
-        android:layout_width="205dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="164dp"
-        android:text="Salvar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/senha"
-        tools:ignore="TouchTargetSizeCheck" />
+        android:id="@+id/registrationButtonSave"
+        android:layout_below="@id/registrationPasswordField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/registration_page_save"
+        tools:ignore="TouchTargetSizeCheck"
+        style="@style/default.layout.button.primary"/>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="169dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="82dp"
-        android:layout_marginBottom="59dp"
-        android:text="Cadastre-se"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/cpfCnpj"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/cpfCnpj"
-        android:layout_width="238dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="24dp"
-        android:hint="Cpf/Cnpj"
-        android:textSize="23dp"
-        app:layout_constraintBottom_toTopOf="@+id/nome"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <EditText
-        android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="239dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/senha"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nome" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

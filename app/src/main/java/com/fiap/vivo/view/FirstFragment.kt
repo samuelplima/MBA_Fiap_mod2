@@ -1,6 +1,5 @@
 package com.fiap.vivo.view
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
@@ -46,7 +45,7 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.requireCpfCnpjField.addTextChangedListener(MaskUnmask.MaskEditUtil.mask(binding.requireCpfCnpjField))
-        binding.searchLogin.setOnClickListener {
+        binding.searchLoginButton.setOnClickListener {
 
 
             var checkData: Boolean
