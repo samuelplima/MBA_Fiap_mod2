@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -56,8 +55,6 @@ class FirstFragment : Fragment() {
             when (binding.requireCpfCnpjField.text.length) {
                 14 -> {
                     if (checkCpfCnpj.checkCpf(binding.requireCpfCnpjField.text.toString())) {
-                        binding.docCheck.text = "CPF válido"
-                        binding.docCheck.setTextColor(Color.GREEN)
                         checkData = true
                     } else {
                         binding.docCheck.text = "CPF inválido"
@@ -67,8 +64,6 @@ class FirstFragment : Fragment() {
                 }
                 18 -> {
                     if (checkCpfCnpj.checkCpf(binding.requireCpfCnpjField.text.toString())) {
-                        binding.docCheck.text = "CNPJ válido"
-                        binding.docCheck.setTextColor(Color.GREEN)
                         checkData = true
                     } else {
                         binding.docCheck.text = "CNPJ inválido"
