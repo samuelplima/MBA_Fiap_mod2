@@ -59,9 +59,9 @@ class ThirdFragment : Fragment() {
 
     private fun insertDataToDatabase() {
         val nome = binding.registrationNameField.text.toString()
-        val email = binding.registrationEmailField.text.toString()
-        val senha = binding.registrationPasswordField.text.toString()
-        val plano = binding.editTextTextPersonName.text.toString().uppercase()
+        val email = binding.registrationEmailLabel.text.toString()
+        val senha = binding.registrationEmailField.text.toString()
+        val plano = binding.registrationPasswordLabel.text.toString().uppercase()
         val situacao = ""
         var cnpjCpf = ""
         val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)

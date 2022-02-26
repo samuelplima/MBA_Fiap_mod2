@@ -77,9 +77,18 @@
         android:inputType="textPassword"
         tools:ignore="TouchTargetSizeCheck"/>
 
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_below="@id/registrationPasswordField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:hint="Plano: Empresarial/Pessoal"
+        android:inputType="textPersonName"/>
+
     <Button
         android:id="@+id/registrationButtonSave"
-        android:layout_below="@id/registrationPasswordField"
+        android:layout_below="@id/editTextTextPersonName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/registration_page_save"
