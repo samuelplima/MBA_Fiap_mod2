@@ -36,7 +36,7 @@ class SecondFragment : Fragment() {
         val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
 
         if (identificacaoPersistencia != null) {
-            binding.cpfCnpj.text = identificacaoPersistencia.getString("documento","")
+            binding.requireCpfCnpjField.text = identificacaoPersistencia.getString("documento","")
             binding.textView2.text = "Já tem cadastro, Faça Login!"
         }
 

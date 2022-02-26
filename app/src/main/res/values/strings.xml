@@ -2,6 +2,12 @@
     <!--  Footer Text  -->
     <string name="footer_text">By: Grupo A</string>
 
+    <!--  First Page  -->
+    <string name="welcome_title"><u>Olá! Seja Bem Vindo ao <br /> Nosso App</u></string>
+    <string name="cpf_cnpj_field_text">Informe seu <b> <font color='#650199'>CPF</font></b> ou <b> <font color='#650199'>CNPJ</font></b> para checarmos se já possui cadastro.</string>
+    <string name="search_login_button_text">Consultar</string>
+
+
     <string name="app_name">VivoN</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
@@ -10,9 +16,7 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Olá! Seja Bem Vindo ao Nosso App</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="cadastro_explicacao">Informe seu <b> <font color='#8128B4'>CPF</font></b> ou <b> <font color='#8128B4'>CNPJ</font></b> para checarmos se já possui cadastro.</string>
     <string name="cpf_ou_cnpj">CPF ou CNPJ</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

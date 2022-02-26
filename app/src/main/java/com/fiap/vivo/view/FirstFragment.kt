@@ -45,11 +45,11 @@ class FirstFragment : Fragment() {
     @SuppressLint("Range")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.cpfCnpj.addTextChangedListener(MaskUnmask.MaskEditUtil.mask(binding.cpfCnpj))
-        binding.buttonFirst.setOnClickListener {
+        binding.requireCpfCnpjField.addTextChangedListener(MaskUnmask.MaskEditUtil.mask(binding.requireCpfCnpjField))
+        binding.searchLogin.setOnClickListener {
 
             val db = DatabaseManager(this, "BANCO")
-            val valor = binding.cpfCnpj.text.toString()
+            val valor = binding.requireCpfCnpjField.text.toString()
             var cpfCnpj = ""
             var checkDB = false
             val cursor = db.findUser(valor)
@@ -61,9 +61,9 @@ class FirstFragment : Fragment() {
                 cpfCnpj = cursor.getString(cursor.getColumnIndex("CPF_CNPJ"))
             }
 
-            when (binding.cpfCnpj.text.length) {
+            when (binding.requireCpfCnpjField.text.length) {
                 14 -> {
-                    if (checkCpfCnpj.checkCpf(binding.cpfCnpj.text.toString())) {
+                    if (checkCpfCnpj.checkCpf(binding.requireCpfCnpjField.text.toString())) {
                         binding.docCheck.text = "CPF válido"
                         binding.docCheck.setTextColor(Color.GREEN)
                         //chamar metodo que verifica o banco
@@ -75,7 +75,7 @@ class FirstFragment : Fragment() {
                     }
                 }
                 18 -> {
-                    if (checkCpfCnpj.checkCpf(binding.cpfCnpj.text.toString())) {
+                    if (checkCpfCnpj.checkCpf(binding.requireCpfCnpjField.text.toString())) {
                         binding.docCheck.text = "CNPJ válido"
                         binding.docCheck.setTextColor(Color.GREEN)
                         checkDB = true
@@ -111,7 +111,7 @@ class FirstFragment : Fragment() {
             )
         val editor = identificacaoPersistencia?.edit()
         if (editor != null) {
-            editor.putString("documento", binding.cpfCnpj.text.toString())
+            editor.putString("documento", binding.requireCpfCnpjField.text.toString())
             editor.apply()
         }
     }
