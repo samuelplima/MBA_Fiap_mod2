@@ -7,12 +7,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.DatabaseManager
 import com.fiap.vivo.R
 import com.fiap.vivo.databinding.FragmentFirstBinding
+import com.fiap.vivo.model.UserViewModel
 import com.fiap.vivo.presenter.CheckCpfCnpj
 import com.fiap.vivo.presenter.MaskUnmask
 
@@ -22,14 +23,12 @@ import com.fiap.vivo.presenter.MaskUnmask
  */
 class FirstFragment : Fragment() {
 
+    private lateinit var mUserViewModel: UserViewModel
+
     private var _binding: FragmentFirstBinding? = null
 
     val checkCpfCnpj = CheckCpfCnpj()
 
-    val maskUnmask = MaskUnmask()
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -37,61 +36,54 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+        mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
 
     }
 
-    @SuppressLint("Range")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.requireCpfCnpjField.addTextChangedListener(MaskUnmask.MaskEditUtil.mask(binding.requireCpfCnpjField))
         binding.searchLogin.setOnClickListener {
 
-            val db = DatabaseManager(this, "BANCO")
-            val valor = binding.requireCpfCnpjField.text.toString()
-            var cpfCnpj = ""
-            var checkDB = false
-            val cursor = db.findUser(valor)
 
-            //db.insereUser(valor, valor)
+            var checkData: Boolean
+            val cpfCnpjDB = binding.requireCpfCnpjField.text.toString()
+            val cpfCnpjUser = findUser(cpfCnpjDB)
 
-            if (cursor.count > 0) {
-                cursor.moveToFirst()
-                cpfCnpj = cursor.getString(cursor.getColumnIndex("CPF_CNPJ"))
-            }
 
             when (binding.requireCpfCnpjField.text.length) {
                 14 -> {
                     if (checkCpfCnpj.checkCpf(binding.requireCpfCnpjField.text.toString())) {
                         binding.docCheck.text = "CPF válido"
                         binding.docCheck.setTextColor(Color.GREEN)
-                        //chamar metodo que verifica o banco
-                        checkDB = true
+                        checkData = true
                     } else {
                         binding.docCheck.text = "CPF inválido"
                         binding.docCheck.setTextColor(Color.RED)
-                        checkDB = false
+                        checkData = false
                     }
                 }
                 18 -> {
                     if (checkCpfCnpj.checkCpf(binding.requireCpfCnpjField.text.toString())) {
                         binding.docCheck.text = "CNPJ válido"
                         binding.docCheck.setTextColor(Color.GREEN)
-                        checkDB = true
+                        checkData = true
                     } else {
                         binding.docCheck.text = "CNPJ inválido"
                         binding.docCheck.setTextColor(Color.RED)
-                        checkDB = false
+                        checkData = false
                     }
                 }
                 else -> {
                     binding.docCheck.text = "Não é um CPF nem CNPJ válido."
-                    checkDB = false
+                    checkData = false
                 }
             }
-            if (checkDB) {
-                if (valor == cpfCnpj) {
+            if (checkData) {
+                if (cpfCnpjUser == cpfCnpjDB) {
                     sharedPreferrences()
                     findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
                 } else {
@@ -100,7 +92,6 @@ class FirstFragment : Fragment() {
                 }
             }
         }
-        //findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
     }
 
     fun sharedPreferrences(){
@@ -114,6 +105,10 @@ class FirstFragment : Fragment() {
             editor.putString("documento", binding.requireCpfCnpjField.text.toString())
             editor.apply()
         }
+    }
+
+    fun findUser(cpfCnpjDB : String) : String{
+        return mUserViewModel.findUser(cpfCnpjDB)
     }
 
     override fun onDestroyView() {
