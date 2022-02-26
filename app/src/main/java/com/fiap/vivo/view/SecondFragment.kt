@@ -46,7 +46,7 @@ open class SecondFragment : Fragment() {
         if (identificacaoPersistencia != null) {
             cnpjCpf = identificacaoPersistencia.getString("documento", "").toString()
         }
-        binding.textView2.text = mUserViewModel.findName(cnpjCpf)
+        binding.textView2.text = "Olá, " + mUserViewModel.findName(cnpjCpf)
 
         binding.buttonSecond.setOnClickListener {
             login()
