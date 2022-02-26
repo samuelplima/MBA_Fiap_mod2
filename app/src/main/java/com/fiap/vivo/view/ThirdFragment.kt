@@ -62,6 +62,7 @@ class ThirdFragment : Fragment() {
         val email = binding.editTextTextEmailAddress.text.toString()
         val senha = binding.senha.text.toString()
         val plano = binding.editTextTextPersonName.text.toString().uppercase()
+        val situacao = ""
         var cnpjCpf = ""
         val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
         if (identificacaoPersistencia != null) {
@@ -69,7 +70,7 @@ class ThirdFragment : Fragment() {
         }
         if (inputCheck(nome, cnpjCpf, email, plano, senha)) {
             //create user object
-            val user = User(0, nome, cnpjCpf, email, plano, senha)
+            val user = User(0, nome, cnpjCpf, email, plano, situacao, senha)
             //add data to database
             mUserViewModel.addUser(user)
             Toast.makeText(requireContext(), "Salvo com sucesso!", Toast.LENGTH_LONG).show()

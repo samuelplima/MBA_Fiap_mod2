@@ -34,4 +34,8 @@ class UserRepository(private val userDAO: UserDAO) {
         return userDAO.findPlanos(cpfCnpjDB)
     }
 
+    fun findSituacao(cpfCnpjDB: String) : String{
+        return userDAO.findSituacao(cpfCnpjDB)
+    }
+
 }

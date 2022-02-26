@@ -33,5 +33,8 @@ interface UserDAO {
     @Query("SELECT planos FROM user_table where cpfCnpj =:cpfCnpjDB")
     fun findPlanos(cpfCnpjDB: String) : String
 
+    @Query("SELECT situacao FROM user_table where cpfCnpj =:cpfCnpjDB")
+    fun findSituacao(cpfCnpjDB: String) : String
+
 }
 

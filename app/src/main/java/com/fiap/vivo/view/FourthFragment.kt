@@ -50,6 +50,7 @@ class FourthFragment : Fragment() {
         binding.cpfOUcnpj.text = "Cpf/Cnpj: " + mUserViewModel.findUser(cnpjCpf)
         binding.email.text = "Email: " + mUserViewModel.findEmailWithCpfCnpj(cnpjCpf)
         binding.plano.text = "Plano: " + mUserViewModel.findPlanos(cnpjCpf)
+        binding.situacao.text = "Situação: " + mUserViewModel.findSituacao(cnpjCpf).uppercase()
     }
 
     override fun onDestroyView() {

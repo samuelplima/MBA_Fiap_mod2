@@ -11,6 +11,7 @@ data class User(
     val cpfCnpj: String,
     val email: String,
     val planos: String,
+    val situacao: String,
     val senha: String
 )
 
