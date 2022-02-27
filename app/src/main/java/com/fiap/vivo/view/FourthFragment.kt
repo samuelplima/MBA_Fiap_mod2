@@ -46,11 +46,11 @@ class FourthFragment : Fragment() {
         if (identificacaoPersistencia != null) {
             cnpjCpf = identificacaoPersistencia.getString("documento", "").toString()
         }
-        binding.nome.text = "Nome: " + mUserViewModel.findName(cnpjCpf)
-        binding.cpfOUcnpj.text = "Cpf/Cnpj: " + mUserViewModel.findUser(cnpjCpf)
-        binding.email.text = "Email: " + mUserViewModel.findEmailWithCpfCnpj(cnpjCpf)
-        binding.plano.text = "Plano: " + mUserViewModel.findPlanos(cnpjCpf)
-        binding.situacao.text = "Situação: " + mUserViewModel.findSituacao(cnpjCpf).uppercase()
+        binding.dashboardPageName.text = "Nome: " + mUserViewModel.findName(cnpjCpf)
+        binding.dashboardPageCpfCnpj.text = "Cpf/Cnpj: " + mUserViewModel.findUser(cnpjCpf)
+        binding.dashboardPageEmail.text = "Email: " + mUserViewModel.findEmailWithCpfCnpj(cnpjCpf)
+        binding.dashboardPagePlan.text = "Plano: " + mUserViewModel.findPlanos(cnpjCpf)
+        binding.dashboardPageSituation.text = "Situação: " + mUserViewModel.findSituacao(cnpjCpf).uppercase()
     }
 
     override fun onDestroyView() {
