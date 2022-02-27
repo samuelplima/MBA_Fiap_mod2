@@ -18,9 +18,8 @@
         android:layout_below="@id/registrationPageTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Cpf/Cnpj"
-        android:textAlignment="center"
         android:layout_marginTop="30dp"
+        android:textAlignment="center"
         style="@style/default.layout.title"/>
 
     <TextView
@@ -36,10 +35,8 @@
         android:layout_below="@id/registrationNameLabel"
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:background="@drawable/edit_text_background"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="4dp"
-        tools:ignore="TouchTargetSizeCheck"/>
+        tools:ignore="TouchTargetSizeCheck"
+        style="@style/default.layout.field"/>
 
     <TextView
         android:id="@+id/registrationEmailLabel"
@@ -54,11 +51,9 @@
         android:layout_below="@id/registrationEmailLabel"
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:background="@drawable/edit_text_background"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="4dp"
         android:inputType="textEmailAddress"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck"
+        style="@style/default.layout.field"/>
 
     <TextView
         android:id="@+id/registrationPasswordLabel"
@@ -73,18 +68,26 @@
         android:layout_below="@id/registrationPasswordLabel"
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:background="@drawable/edit_text_background"
         android:inputType="textPassword"
-        tools:ignore="TouchTargetSizeCheck"/>
+        tools:ignore="TouchTargetSizeCheck"
+        style="@style/default.layout.field"/>
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
+    <TextView
+        android:id="@+id/registrationPersonNameLabel"
         android:layout_below="@id/registrationPasswordField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:hint="Plano: Empresarial/Pessoal"
-        android:inputType="textPersonName"/>
+        android:text="@string/registration_page_person"
+        style="@style/default.layout.text"/>
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_below="@id/registrationPersonNameLabel"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:inputType="textPersonName"
+        tools:ignore="TouchTargetSizeCheck"
+        style="@style/default.layout.field"/>
 
     <Button
         android:id="@+id/registrationButtonSave"

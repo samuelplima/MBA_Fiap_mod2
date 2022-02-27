@@ -61,7 +61,7 @@ class ThirdFragment : Fragment() {
         val nome = binding.registrationNameField.text.toString()
         val email = binding.registrationEmailLabel.text.toString()
         val senha = binding.registrationEmailField.text.toString()
-        val plano = binding.registrationPasswordLabel.text.toString().uppercase()
+        val plano = ""
         val situacao = ""
         var cnpjCpf = ""
         val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)

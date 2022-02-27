@@ -1,80 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.SecondFragment">
+    tools:context="com.fiap.vivo.view.SecondFragment">
+
+    <TextView
+        android:id="@+id/loginPageTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login_page_title"
+        style="@style/default.layout.title"/>
+
+    <TextView
+        android:id="@+id/loginPageWelcomeText"
+        android:layout_below="@+id/loginPageTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        style="@style/default.layout.title"/>
+
+    <TextView
+        android:id="@+id/loginPageEmailLabel"
+        android:layout_below="@+id/loginPageWelcomeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/login_page_email"
+        style="@style/default.layout.text"/>
+
+    <EditText
+        android:id="@+id/loginPageEmailField"
+        android:layout_below="@+id/loginPageEmailLabel"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:inputType="textEmailAddress"
+        style="@style/default.layout.field"/>
+
+    <TextView
+        android:id="@+id/loginPagePasswordLabel"
+        android:layout_below="@+id/loginPageEmailField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login_page_password"
+        style="@style/default.layout.text"/>
+
+    <EditText
+        android:id="@+id/loginPagePasswordField"
+        android:layout_below="@+id/loginPagePasswordLabel"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:inputType="textPassword"
+        style="@style/default.layout.field"/>
 
     <Button
-        android:id="@+id/button_second"
-        android:layout_width="125dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="201dp"
-        android:text="Login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="76dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="34dp"
-        android:text="TextView"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="140dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="42dp"
-        android:text="Faça login"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <EditText
-        android:id="@+id/editTextTextEmailAddress2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="21dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="61dp"
-        android:ems="10"
-        android:hint="Senha"
-        android:inputType="textPassword"
-        android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_second"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:id="@+id/loginPageSaveButton"
+        android:layout_below="@id/loginPagePasswordField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login_page_login"
+        style="@style/default.layout.button.primary"/>
+</RelativeLayout>
