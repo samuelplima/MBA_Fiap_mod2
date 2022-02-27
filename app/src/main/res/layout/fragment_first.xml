@@ -1,54 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.fiap.vivo.view.FirstFragment">
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <TextView
-        android:id="@+id/welcomeMessage"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/welcome_title"
-        android:textAlignment="center"
-        style="@style/default.layout.title"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.fiap.vivo.view.FirstFragment">
 
-    <TextView
-        android:id="@+id/requireCpfCnpjLabel"
-        android:layout_below="@id/welcomeMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cpf_cnpj_field_text"
-        android:textAlignment="center"
-        style="@style/default.layout.text"/>
+        <TextView
+            android:id="@+id/welcomeMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_title"
+            android:textAlignment="center"
+            style="@style/default.layout.title"/>
 
-    <EditText
-        android:id="@+id/requireCpfCnpjField"
-        android:layout_below="@id/requireCpfCnpjLabel"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:background="@drawable/edit_text_background"
-        android:inputType="number"
-        android:hint="@string/cpf_ou_cnpj"
-        android:autofillHints=""
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="4dp"/>
+        <TextView
+            android:id="@+id/requireCpfCnpjLabel"
+            android:layout_below="@id/welcomeMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cpf_cnpj_field_text"
+            android:textAlignment="center"
+            style="@style/default.layout.text"/>
 
-    <Button
-        android:id="@+id/searchLoginButton"
-        android:layout_below="@id/requireCpfCnpjField"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/search_login_button_text"
-        style="@style/default.layout.button.primary"/>
+        <EditText
+            android:id="@+id/requireCpfCnpjField"
+            android:layout_below="@id/requireCpfCnpjLabel"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/edit_text_background"
+            android:inputType="number"
+            android:hint="@string/cpf_ou_cnpj"
+            android:autofillHints=""
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="4dp"/>
 
-    <TextView
-        android:id="@+id/docCheck"
-        android:layout_below="@id/searchLoginButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="20sp"/>
+        <Button
+            android:id="@+id/searchLoginButton"
+            android:layout_below="@id/requireCpfCnpjField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/search_login_button_text"
+            style="@style/default.layout.button.primary"/>
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/docCheck"
+            android:layout_below="@id/searchLoginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"/>
+    </LinearLayout>
+</ScrollView>
