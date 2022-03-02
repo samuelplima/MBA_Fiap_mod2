@@ -59,9 +59,9 @@ class ThirdFragment : Fragment() {
 
     private fun insertDataToDatabase() {
         val nome = binding.registrationNameField.text.toString()
-        val email = binding.registrationEmailLabel.text.toString()
-        val senha = binding.registrationEmailField.text.toString()
-        val plano = ""
+        val email = binding.registrationEmailField.text.toString()
+        val senha = binding.registrationPasswordField.text.toString()
+        val plano = binding.editTextTextPersonName.text.toString()
         val situacao = ""
         var cnpjCpf = ""
         val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
@@ -84,7 +84,7 @@ class ThirdFragment : Fragment() {
             ).show()
         }
     }
-    private fun inputCheck(nome: String, cnpjCpf: String, email : String, plano : String, senha : String): Boolean {
+    private fun inputCheck(nome: String, cnpjCpf: String, email: String, plano: String, senha: String): Boolean {
         return !(TextUtils.isEmpty(nome) && TextUtils.isEmpty(cnpjCpf) && TextUtils.isEmpty(email)  && TextUtils.isEmpty(plano) && TextUtils.isEmpty(senha))
     }
 

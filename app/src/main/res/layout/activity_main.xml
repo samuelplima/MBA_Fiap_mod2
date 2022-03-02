@@ -10,8 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="77dp"
         android:layout_alignParentTop="true"
-        android:background="@color/primary"
-        android:layout_marginBottom="60dp">
+        android:background="@color/primary">
 
         <androidx.constraintlayout.utils.widget.ImageFilterButton
             android:layout_width="match_parent"
@@ -53,13 +52,13 @@
     <FrameLayout
         android:id="@+id/footer"
         android:layout_width="match_parent"
-        android:layout_height="77dp"
+        android:layout_height="67dp"
         android:layout_alignParentBottom="true"
         android:background="@color/primary">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="65dp"
             android:layout_gravity="bottom"
             android:gravity="center_horizontal|center_vertical"
             android:background="@color/white"

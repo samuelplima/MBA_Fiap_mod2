@@ -18,6 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/dashboard_page_welcome_title"
+            android:layout_marginTop="60dp"
             style="@style/default.layout.title"/>
 
         <TextView
