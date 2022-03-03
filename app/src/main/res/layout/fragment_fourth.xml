@@ -55,5 +55,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/default.layout.text"/>
+
+        <Button
+            android:id="@+id/dashboardButtonLogout"
+            android:layout_below="@id/dashboardPageSituation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dashboard_page_button_logout"
+            tools:ignore="TouchTargetSizeCheck"
+            style="@style/default.layout.button.primary"/>
     </LinearLayout>
 </ScrollView>

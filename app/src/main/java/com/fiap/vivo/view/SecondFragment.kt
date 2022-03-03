@@ -48,7 +48,6 @@ open class SecondFragment : Fragment() {
         }
 
         binding.loginPageWelcomeText.text = "Olá, " + mUserViewModel.findName(cnpjCpf)
-//        binding.loginPageEmailField.text = mUserViewModel.findEmail(cnpjCpf)
 
         binding.loginPageSaveButton.setOnClickListener {
             login()

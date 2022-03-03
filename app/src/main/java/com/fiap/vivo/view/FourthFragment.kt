@@ -1,5 +1,6 @@
 package com.fiap.vivo.view
 
+import android.R
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -38,6 +39,10 @@ class FourthFragment : Fragment() {
 
         bringData()
 
+        binding.dashboardButtonLogout.setOnClickListener {
+            logout()
+        }
+
     }
 
     private fun bringData(){
@@ -51,6 +56,10 @@ class FourthFragment : Fragment() {
         binding.dashboardPageEmail.text = "Email: " + mUserViewModel.findEmailWithCpfCnpj(cnpjCpf)
         binding.dashboardPagePlan.text = "Plano: " + mUserViewModel.findPlanos(cnpjCpf)
         binding.dashboardPageSituation.text = "Situação: " + mUserViewModel.findSituacao(cnpjCpf).uppercase()
+    }
+
+    private fun logout() {
+        R.attr.finishOnCloseSystemDialogs
     }
 
     override fun onDestroyView() {

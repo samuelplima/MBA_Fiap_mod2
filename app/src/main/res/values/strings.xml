@@ -23,6 +23,7 @@
 
     <!--  Dashboard Page  -->
     <string name="dashboard_page_welcome_title">Seja Bem-Vindo(a)</string>
+    <string name="dashboard_page_button_logout">Sair</string>
 
 
     <string name="app_name">VivoN</string>
