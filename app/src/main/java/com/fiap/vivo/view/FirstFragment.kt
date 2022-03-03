@@ -43,18 +43,18 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.cpfCnpj.addTextChangedListener(MaskUnmask.MaskEditUtil.mask(binding.cpfCnpj))
-        binding.buttonFirst.setOnClickListener {
+        binding.requireCpfCnpjField.addTextChangedListener(MaskUnmask.MaskEditUtil.mask(binding.requireCpfCnpjField))
+        binding.searchLoginButton.setOnClickListener {
 
 
             var checkData: Boolean
-            val cpfCnpjDB = binding.cpfCnpj.text.toString()
+            val cpfCnpjDB = binding.requireCpfCnpjField.text.toString()
             val cpfCnpjUser = findUser(cpfCnpjDB)
 
 
-            when (binding.cpfCnpj.text.length) {
+            when (binding.requireCpfCnpjField.text.length) {
                 14 -> {
-                    if (checkCpfCnpj.checkCpf(binding.cpfCnpj.text.toString())) {
+                    if (checkCpfCnpj.checkCpf(binding.requireCpfCnpjField.text.toString())) {
                         checkData = true
                     } else {
                         binding.docCheck.text = "CPF inválido"
@@ -63,7 +63,7 @@ class FirstFragment : Fragment() {
                     }
                 }
                 18 -> {
-                    if (checkCpfCnpj.checkCpf(binding.cpfCnpj.text.toString())) {
+                    if (checkCpfCnpj.checkCpf(binding.requireCpfCnpjField.text.toString())) {
                         checkData = true
                     } else {
                         binding.docCheck.text = "CNPJ inválido"
@@ -96,7 +96,7 @@ class FirstFragment : Fragment() {
             )
         val editor = identificacaoPersistencia?.edit()
         if (editor != null) {
-            editor.putString("documento", binding.cpfCnpj.text.toString())
+            editor.putString("documento", binding.requireCpfCnpjField.text.toString())
             editor.apply()
         }
     }
@@ -109,6 +109,4 @@ class FirstFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
-
 }

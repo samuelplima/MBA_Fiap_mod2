@@ -46,16 +46,18 @@ open class SecondFragment : Fragment() {
         if (identificacaoPersistencia != null) {
             cnpjCpf = identificacaoPersistencia.getString("documento", "").toString()
         }
-        binding.textView2.text = "Olá, " + mUserViewModel.findName(cnpjCpf)
 
-        binding.buttonSecond.setOnClickListener {
+        binding.loginPageWelcomeText.text = "Olá, " + mUserViewModel.findName(cnpjCpf)
+//        binding.loginPageEmailField.text = mUserViewModel.findEmail(cnpjCpf)
+
+        binding.loginPageSaveButton.setOnClickListener {
             login()
         }
     }
 
     private fun login(){
-        val email = binding.editTextTextEmailAddress2.text.toString()
-        val senha = binding.editTextTextPassword.text.toString()
+        val email = binding.loginPageEmailField.text.toString()
+        val senha = binding.loginPagePasswordField.text.toString()
         val emailDB = mUserViewModel.findEmail(email)
         val senhaDB = mUserViewModel.findPassword(senha)
 

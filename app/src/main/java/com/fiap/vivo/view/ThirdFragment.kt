@@ -45,7 +45,7 @@ class ThirdFragment : Fragment() {
 
         identificacaoPersistencia()
 
-        binding.buttonSave.setOnClickListener {
+        binding.registrationButtonSave.setOnClickListener {
             insertDataToDatabase()
         }
 
@@ -53,15 +53,15 @@ class ThirdFragment : Fragment() {
     fun identificacaoPersistencia(){
         val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
         if (identificacaoPersistencia != null) {
-            binding.cpfCnpj.text = identificacaoPersistencia.getString("documento", "")
+            binding.registrationCpfCnpj.text = identificacaoPersistencia.getString("documento", "")
         }
     }
 
     private fun insertDataToDatabase() {
-        val nome = binding.nome.text.toString()
-        val email = binding.editTextTextEmailAddress.text.toString()
-        val senha = binding.senha.text.toString()
-        val plano = binding.editTextTextPersonName.text.toString().uppercase()
+        val nome = binding.registrationNameField.text.toString()
+        val email = binding.registrationEmailField.text.toString()
+        val senha = binding.registrationPasswordField.text.toString()
+        val plano = binding.editTextTextPersonName.text.toString()
         val situacao = ""
         var cnpjCpf = ""
         val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
@@ -84,7 +84,7 @@ class ThirdFragment : Fragment() {
             ).show()
         }
     }
-    private fun inputCheck(nome: String, cnpjCpf: String, email : String, plano : String, senha : String): Boolean {
+    private fun inputCheck(nome: String, cnpjCpf: String, email: String, plano: String, senha: String): Boolean {
         return !(TextUtils.isEmpty(nome) && TextUtils.isEmpty(cnpjCpf) && TextUtils.isEmpty(email)  && TextUtils.isEmpty(plano) && TextUtils.isEmpty(senha))
     }
 
