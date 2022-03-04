@@ -57,7 +57,8 @@ class FourthFragment : Fragment() {
         binding.dashboardPageEmail.text = "Email: " + mUserViewModel.findEmailWithCpfCnpj(cnpjCpf)
         binding.dashboardPagePlan.text = "Plano: " + mUserViewModel.findPlanos(cnpjCpf)
         binding.dashboardPageSituation.text = "Situação: " + mUserViewModel.findSituacao(cnpjCpf).uppercase()
-    }
+        }
+
 
     private fun logout() {
         R.attr.finishOnCloseSystemDialogs

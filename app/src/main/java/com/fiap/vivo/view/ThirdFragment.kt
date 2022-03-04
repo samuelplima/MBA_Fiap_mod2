@@ -62,12 +62,13 @@ class ThirdFragment : Fragment() {
         val email = binding.registrationEmailField.text.toString()
         val senha = binding.registrationPasswordField.text.toString()
         val plano = binding.editTextTextPersonName.text.toString()
-        val situacao = ""
+        val situacao = "Em Análise!"
         var cnpjCpf = ""
         val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
         if (identificacaoPersistencia != null) {
             cnpjCpf = identificacaoPersistencia.getString("documento", "").toString()
         }
+
         if (inputCheck(nome, cnpjCpf, email, plano, senha)) {
             //create user object
             val user = User(0, nome, cnpjCpf, email, plano, situacao, senha)

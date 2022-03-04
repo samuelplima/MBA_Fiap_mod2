@@ -38,4 +38,8 @@ class UserRepository(private val userDAO: UserDAO) {
         return userDAO.findSituacao(cpfCnpjDB)
     }
 
+    fun populateDB(){
+        userDAO.populateDB()
+    }
+
 }

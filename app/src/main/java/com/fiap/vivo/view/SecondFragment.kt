@@ -46,7 +46,6 @@ open class SecondFragment : Fragment() {
         if (identificacaoPersistencia != null) {
             cnpjCpf = identificacaoPersistencia.getString("documento", "").toString()
         }
-
         binding.loginPageWelcomeText.text = "Olá, " + mUserViewModel.findName(cnpjCpf)
 
         binding.loginPageSaveButton.setOnClickListener {

@@ -36,6 +36,8 @@ class FirstFragment : Fragment() {
 
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
+        mUserViewModel.populateDB()
+
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
 

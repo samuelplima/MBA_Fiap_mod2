@@ -52,5 +52,9 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
         return repository.findSituacao(cpfCnpjDB)
     }
 
+    fun populateDB(){
+        repository.populateDB()
+    }
+
 }
 
