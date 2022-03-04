@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.fiap.vivo.databinding.FragmentFourthBinding
 import com.fiap.vivo.model.UserViewModel
 
@@ -60,6 +61,7 @@ class FourthFragment : Fragment() {
 
     private fun logout() {
         R.attr.finishOnCloseSystemDialogs
+        findNavController().navigate(com.fiap.vivo.R.id.action_fourthFragment_to_FirstFragment)
     }
 
     override fun onDestroyView() {
