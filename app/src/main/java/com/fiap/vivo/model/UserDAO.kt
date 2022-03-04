@@ -36,8 +36,7 @@ interface UserDAO {
     @Query("SELECT situacao FROM user_table where cpfCnpj =:cpfCnpjDB")
     fun findSituacao(cpfCnpjDB: String) : String
 
-    @Query(
-        " INSERT INTO user_table (name,cpfCnpj,email,planos,situacao,senha) " +
+    @Query(" INSERT INTO user_table (name,cpfCnpj,email,planos,situacao,senha) " +
                 "VALUES " +
                 "  (\"Brock Reed\",\"32.473.878/0001-30\",\"nonummy@protonmail.ca\",\"Empresarial\",\"ativo\",\"JQA88GTF6LB\"), " +
                 "  (\"Raphael Mcgee\",\"75.755.746/0001-04\",\"id.risus@google.org\",\"Empresarial\",\"inativo\",\"QIQ88JCO6NC\"), " +
@@ -52,23 +51,7 @@ interface UserDAO {
     )
     fun populateDB()
 
-    // CLAQUETE DOIS
 
-    @Query(
-        " INSERT INTO user_table (name,cpfCnpj,email,planos,situacao,senha) " +
-                "VALUES " +
-                "  (\"Brock Reed\",\"32.473.878/0001-30\",\"nonummy@protonmail.ca\",\"Empresarial\",\"ativo\",\"JQA88GTF6LB\"), " +
-                "  (\"Raphael Mcgee\",\"75.755.746/0001-04\",\"id.risus@google.org\",\"Empresarial\",\"inativo\",\"QIQ88JCO6NC\"), " +
-                "  (\"Chava Mcclure\",\"14.277.157/0001-73\",\"nunc.risus.varius@yahoo.com\",\"Empresarial\",\"ativo\",\"HWO98GUR9WJ\"), " +
-                "  (\"Regina Bright\",\"54.186.204/0001-98\",\"felis.eget@google.org\",\"Empresarial\",\"inativo\",\"TBR84NRN4LJ\"), " +
-                "  (\"Darrel Dawson\",\"26.385.632/0001-04\",\"cras.dolor.dolor@yahoo.org\",\"Empresarial\",\"ativo\",\"ISL66WIZ2PY\"), " +
-                "  (\"Dylan Kane\",\"332.594.723-98\",\"lacus.nulla.tincidunt@aol.edu\",\"Pessoal\",\"inativo\",\"UFU63HYS5OB\"), " +
-                "  (\"Wylie Mullins\",\"243.474.303-02\",\"suspendisse.sed.dolor@icloud.com\",\"Pessoal\",\"ativo\",\"CKS80RHW4UC\"), " +
-                "  (\"Lawrence Kelley\",\"068.560.871-95\",\"sed.sapien@outlook.org\",\"Pessoal\",\"inativo\",\"ILN13EOO2JM\"), " +
-                "  (\"Jessica Hobbs\",\"615.332.336-75\",\"gravida.praesent@outlook.couk\",\"Pessoal\",\"ativo\",\"SEK48ZDW3TV\")," +
-                "  (\"Aimee Swanson\",\"534.460.541-20\",\"magna@google.org\",\"Pessoal\",\"inativo\",\"LMO68IXP3SD\")",
-    )
-    fun populateDB()
 
 }
 
