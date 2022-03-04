@@ -11,19 +11,18 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.fiap.vivo.R
-import com.fiap.vivo.databinding.FragmentSecondBinding
-import com.fiap.vivo.model.User
+import com.fiap.vivo.databinding.LoginScreenBinding
 import com.fiap.vivo.model.UserViewModel
 
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
-open class SecondFragment : Fragment() {
+open class LoginScreen : Fragment() {
 
     private lateinit var mUserViewModel: UserViewModel
 
-    private var _binding: FragmentSecondBinding? = null
+    private var _binding: LoginScreenBinding? = null
 
     val binding get() = _binding!!
 
@@ -35,7 +34,7 @@ open class SecondFragment : Fragment() {
 
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        _binding = LoginScreenBinding.inflate(inflater, container, false)
         return binding.root
     }
 

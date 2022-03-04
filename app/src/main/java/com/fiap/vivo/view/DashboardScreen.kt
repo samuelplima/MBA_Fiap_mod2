@@ -9,19 +9,19 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.fiap.vivo.databinding.FragmentFourthBinding
+import com.fiap.vivo.databinding.DashboardScreenBinding
 import com.fiap.vivo.model.UserViewModel
 
 /**
  * A simple [Fragment] subclass.
- * Use the [FourthFragment.newInstance] factory method to
+ * Use the [DashboardScreen.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FourthFragment : Fragment() {
+class DashboardScreen : Fragment() {
 
     private lateinit var mUserViewModel: UserViewModel
 
-    private var _binding: FragmentFourthBinding? = null
+    private var _binding: DashboardScreenBinding? = null
 
     val binding get() = _binding!!
 
@@ -32,7 +32,7 @@ class FourthFragment : Fragment() {
 
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
-        _binding = FragmentFourthBinding.inflate(inflater, container, false)
+        _binding = DashboardScreenBinding.inflate(inflater, container, false)
         return binding.root
     }
 

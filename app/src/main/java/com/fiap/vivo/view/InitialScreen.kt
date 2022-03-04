@@ -6,12 +6,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.fiap.vivo.R
-import com.fiap.vivo.databinding.FragmentFirstBinding
+import com.fiap.vivo.databinding.InitialScreenBinding
 import com.fiap.vivo.model.UserViewModel
 import com.fiap.vivo.presenter.CheckCpfCnpj
 import com.fiap.vivo.presenter.MaskUnmask
@@ -20,11 +19,11 @@ import com.fiap.vivo.presenter.MaskUnmask
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment() {
+class InitialScreen : Fragment() {
 
     private lateinit var mUserViewModel: UserViewModel
 
-    private var _binding: FragmentFirstBinding? = null
+    private var _binding: InitialScreenBinding? = null
 
     val checkCpfCnpj = CheckCpfCnpj()
 
@@ -43,7 +42,7 @@ class FirstFragment : Fragment() {
             mUserViewModel.populateDB()
         }
 
-        _binding = FragmentFirstBinding.inflate(inflater, container, false)
+        _binding = InitialScreenBinding.inflate(inflater, container, false)
 
         return binding.root
     }

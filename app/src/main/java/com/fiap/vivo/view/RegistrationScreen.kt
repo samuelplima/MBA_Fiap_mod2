@@ -11,20 +11,20 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.fiap.vivo.R
-import com.fiap.vivo.databinding.FragmentThirdBinding
+import com.fiap.vivo.databinding.RegistrationScreenBinding
 import com.fiap.vivo.model.User
 import com.fiap.vivo.model.UserViewModel
 
 /**
  * A simple [Fragment] subclass.
- * Use the [ThirdFragment.newInstance] factory method to
+ * Use the [RegistrationScreen.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ThirdFragment : Fragment() {
+class RegistrationScreen : Fragment() {
 
     private lateinit var mUserViewModel: UserViewModel
 
-    private var _binding: FragmentThirdBinding? = null
+    private var _binding: RegistrationScreenBinding? = null
 
     private val binding get() = _binding!!
 
@@ -36,7 +36,7 @@ class ThirdFragment : Fragment() {
 
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
-        _binding = FragmentThirdBinding.inflate(inflater, container, false)
+        _binding = RegistrationScreenBinding.inflate(inflater, container, false)
         return binding.root
     }
 
