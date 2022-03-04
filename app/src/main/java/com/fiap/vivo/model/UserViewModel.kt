@@ -3,9 +3,9 @@ package com.fiap.vivo.model
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class UserViewModel(application: Application) : AndroidViewModel(application) {
 
@@ -15,7 +15,11 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
     init {
         val userDAO = UserDatabase.getDatabase(application).userDao()
         repository = UserRepository(userDAO)
-        readAllData = repository.readAllData
+        readAllData = repository.readAllData()
+    }
+
+    fun readAllData(): LiveData<List<User>> {
+        return readAllData
     }
 
     fun addUser(user: User) {

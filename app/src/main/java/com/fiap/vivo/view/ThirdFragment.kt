@@ -50,6 +50,7 @@ class ThirdFragment : Fragment() {
         }
 
     }
+
     fun identificacaoPersistencia(){
         val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
         if (identificacaoPersistencia != null) {
