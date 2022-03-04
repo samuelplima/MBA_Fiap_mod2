@@ -1,10 +1,10 @@
 package com.fiap.vivo.model
 
-import androidx.lifecycle.LiveData
+
 
 class UserRepository(private val userDAO: UserDAO) {
 
-    fun readAllData(): LiveData<List<User>> = userDAO.readAllData()
+    fun readAllData(): List<User> = userDAO.readAllData()
 
     fun addUser(user: User) {
         userDAO.addUser(user)

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -36,14 +37,15 @@ class FirstFragment : Fragment() {
 
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
-        if(mUserViewModel.readAllData() != null){
+        val database = mUserViewModel.readAllData()
+
+        if(database.isEmpty()) {
             mUserViewModel.populateDB()
         }
 
-
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
-        return binding.root
 
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

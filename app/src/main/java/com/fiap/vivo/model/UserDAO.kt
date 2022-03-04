@@ -13,7 +13,7 @@ interface UserDAO {
     fun addUser(user : User)
 
     @Query("SELECT * FROM user_table ORDER BY id")
-    fun readAllData(): LiveData<List<User>>
+    fun readAllData(): List<User>
 
     @Query("SELECT cpfCnpj FROM user_table WHERE cpfCnpj =:cpfCnpjDB")
     fun findUser(cpfCnpjDB : String ) : String
@@ -36,7 +36,9 @@ interface UserDAO {
     @Query("SELECT situacao FROM user_table where cpfCnpj =:cpfCnpjDB")
     fun findSituacao(cpfCnpjDB: String) : String
 
-
+    /*para fins de testes da aplicação
+    *irá popular o banco no primeiro uso para testes dos usuarios ja cadastrados
+    */
     @Query("INSERT INTO user_table (name, cpfCnpj, email, planos, situacao, senha) " +
                  "VALUES " +
                  "  (\"Brock Reed\",\"32.473.878/0001-30\",\"nonummy@protonmail.ca\",\"Empresarial\",\"ativo\",\"JQA88GTF6LB\"), " +
