@@ -41,7 +41,7 @@ interface UserDAO {
     */
     @Query("INSERT INTO user_table (name, cpfCnpj, email, planos, situacao, senha) " +
                  "VALUES " +
-                 "  (\"Brock Reed\",\"32.473.878/0001-30\",\"nonummy@protonmail.ca\",\"Empresarial\",\"ativo\",\"JQA88GTF6LB\"), " +
+                 "  (\"Brock Reed\",\"44.444.444/4444-44\",\"nonummy@protonmail.ca\",\"Empresarial\",\"ativo\",\"JQA88GTF6LB\"), " +
                  "  (\"Raphael Mcgee\",\"75.755.746/0001-04\",\"id.risus@google.org\",\"Empresarial\",\"inativo\",\"QIQ88JCO6NC\"), " +
                  "  (\"Chava Mcclure\",\"14.277.157/0001-73\",\"nunc.risus.varius@yahoo.com\",\"Empresarial\",\"ativo\",\"HWO98GUR9WJ\"), " +
                  "  (\"Regina Bright\",\"54.186.204/0001-98\",\"felis.eget@google.org\",\"Empresarial\",\"inativo\",\"TBR84NRN4LJ\"), " +
