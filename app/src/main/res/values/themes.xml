@@ -52,4 +52,13 @@
         <item name="android:paddingHorizontal">16dp</item>
         <item name="android:paddingVertical">4dp</item>
     </style>
+
+    <style name="default.layout.radiobutton" parent="TextAppearance.AppCompat.Button">
+        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:paddingHorizontal">16dp</item>
+        <item name="android:paddingVertical">4dp</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:layout_marginHorizontal">10dp</item>
+        <item name="android:ems">10</item>
+    </style>
 </resources>
