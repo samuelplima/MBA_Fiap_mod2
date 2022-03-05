@@ -8,12 +8,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.VivoN">
+        android:theme="@style/Theme.Vivo">
         <activity
             android:name="com.fiap.vivo.ui.activity.MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.VivoN.NoActionBar">
+            android:theme="@style/Theme.Vivo.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
