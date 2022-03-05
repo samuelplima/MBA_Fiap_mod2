@@ -26,7 +26,7 @@
     <string name="dashboard_page_button_logout">Sair</string>
 
 
-    <string name="app_name">VivoN</string>
+    <string name="app_name">Vivo</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">CPF ou CNPJ</string>
