@@ -1,4 +1,4 @@
-package com.fiap.vivo.view
+package com.fiap.vivo.ui.activity
 
 import android.os.Bundle
 import android.view.Menu

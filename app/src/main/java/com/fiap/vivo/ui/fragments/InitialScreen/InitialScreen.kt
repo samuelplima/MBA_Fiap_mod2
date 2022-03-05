@@ -1,4 +1,4 @@
-package com.fiap.vivo.view
+package com.fiap.vivo.ui.fragments.InitialScreen
 
 import android.content.Context
 import android.graphics.Color
@@ -11,9 +11,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.fiap.vivo.R
 import com.fiap.vivo.databinding.InitialScreenBinding
-import com.fiap.vivo.model.UserViewModel
-import com.fiap.vivo.presenter.CheckCpfCnpj
-import com.fiap.vivo.presenter.MaskUnmask
+import com.fiap.vivo.viewmodel.UserViewModel
+import com.fiap.vivo.util.CheckCpfCnpj
+import com.fiap.vivo.util.MaskUnmask
 
 
 /**

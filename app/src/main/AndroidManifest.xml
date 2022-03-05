@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VivoN">
         <activity
-            android:name="com.fiap.vivo.view.MainActivity"
+            android:name="com.fiap.vivo.ui.activity.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.VivoN.NoActionBar">

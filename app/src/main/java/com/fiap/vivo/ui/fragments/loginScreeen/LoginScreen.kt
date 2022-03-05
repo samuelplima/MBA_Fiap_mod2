@@ -1,4 +1,4 @@
-package com.fiap.vivo.view
+package com.fiap.vivo.ui.fragments.loginScreeen
 
 import android.content.Context
 import android.os.Bundle
@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.fiap.vivo.R
 import com.fiap.vivo.databinding.LoginScreenBinding
-import com.fiap.vivo.model.UserViewModel
+import com.fiap.vivo.viewmodel.UserViewModel
 
 
 /**

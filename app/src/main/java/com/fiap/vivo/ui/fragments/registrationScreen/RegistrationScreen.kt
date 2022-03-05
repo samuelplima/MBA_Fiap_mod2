@@ -1,4 +1,4 @@
-package com.fiap.vivo.view
+package com.fiap.vivo.ui.fragments.registrationScreen
 
 import android.content.Context
 import android.os.Bundle
@@ -12,8 +12,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.fiap.vivo.R
 import com.fiap.vivo.databinding.RegistrationScreenBinding
-import com.fiap.vivo.model.User
-import com.fiap.vivo.model.UserViewModel
+import com.fiap.vivo.local.model.User
+import com.fiap.vivo.viewmodel.UserViewModel
 
 /**
  * A simple [Fragment] subclass.
