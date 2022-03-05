@@ -1,10 +1,10 @@
-package com.fiap.vivo.model
+package com.fiap.vivo.local.db
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.fiap.vivo.local.model.User
 
 @Dao
 interface UserDAO {

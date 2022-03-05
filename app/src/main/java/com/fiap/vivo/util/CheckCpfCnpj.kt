@@ -1,4 +1,4 @@
-package com.fiap.vivo.presenter
+package com.fiap.vivo.util
 
 class CheckCpfCnpj {
 

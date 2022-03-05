@@ -1,4 +1,4 @@
-package com.fiap.vivo.model
+package com.fiap.vivo.local.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

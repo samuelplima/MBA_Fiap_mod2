@@ -1,6 +1,6 @@
 package com.fiap.testes
 
-import com.fiap.vivo.presenter.CheckCpfCnpj
+import com.fiap.vivo.util.CheckCpfCnpj
 import org.junit.Assert.*
 
 import org.junit.Test

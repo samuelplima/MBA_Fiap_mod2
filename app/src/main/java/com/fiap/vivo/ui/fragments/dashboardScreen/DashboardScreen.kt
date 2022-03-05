@@ -1,4 +1,4 @@
-package com.fiap.vivo.view
+package com.fiap.vivo.ui.fragments.dashboardScreen
 
 import android.R
 import android.content.Context
@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.fiap.vivo.databinding.DashboardScreenBinding
-import com.fiap.vivo.model.UserViewModel
+import com.fiap.vivo.viewmodel.UserViewModel
 
 /**
  * A simple [Fragment] subclass.
