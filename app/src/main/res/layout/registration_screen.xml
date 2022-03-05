@@ -92,23 +92,31 @@
             android:layout_below="@id/registrationPasswordField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:gravity="center">
 
             <RadioButton
-                android:id="@+id/registrationTypeBusiness"
+                android:id="@+id/registrationTypePhone"
                 android:layout_width="wrap_content"
                 android:layout_height="44dp"
-                android:text="@string/registration_page_type_business"
-                android:onClick="onRadioButtonClicked"
+                android:text="@string/registration_page_type_phone"
+                android:inputType="text"
                 style="@style/default.layout.radiobutton"/>
 
             <RadioButton
-                android:id="@+id/registrationTypePersonal"
+                android:id="@+id/registrationTypeInternet"
                 android:layout_width="wrap_content"
                 android:layout_height="44dp"
-                android:text="@string/registration_page_type_personal"
-                android:onClick="onRadioButtonClicked"
+                android:inputType="text"
+                android:text="@string/registration_page_type_internet"
+                style="@style/default.layout.radiobutton"/>
+
+            <RadioButton
+                android:id="@+id/registrationTypeCombo"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:inputType="text"
+                android:text="@string/registration_page_type_combo"
                 style="@style/default.layout.radiobutton"/>
         </RadioGroup>
 
@@ -117,6 +125,7 @@
             android:layout_below="@id/registrationType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="text"
             android:text="@string/registration_page_save"
             tools:ignore="TouchTargetSizeCheck"
             style="@style/default.layout.button.primary"/>

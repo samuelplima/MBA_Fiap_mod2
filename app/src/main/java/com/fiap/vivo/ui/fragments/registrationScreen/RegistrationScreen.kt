@@ -51,8 +51,9 @@ class RegistrationScreen : Fragment() {
 
     }
 
-    fun identificacaoPersistencia(){
-        val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
+    fun identificacaoPersistencia() {
+        val identificacaoPersistencia =
+            this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
         if (identificacaoPersistencia != null) {
             binding.registrationCpfCnpj.text = identificacaoPersistencia.getString("documento", "")
         }
@@ -62,10 +63,13 @@ class RegistrationScreen : Fragment() {
         val nome = binding.registrationNameField.text.toString()
         val email = binding.registrationEmailField.text.toString()
         val senha = binding.registrationPasswordField.text.toString()
-        val plano = binding.editTextTextPersonName.text.toString()
+        var plano = radioOptionType()
         val situacao = "Em Análise!"
         var cnpjCpf = ""
-        val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
+        val identificacaoPersistencia =
+            this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
+
+
         if (identificacaoPersistencia != null) {
             cnpjCpf = identificacaoPersistencia.getString("documento", "").toString()
         }
@@ -86,8 +90,29 @@ class RegistrationScreen : Fragment() {
             ).show()
         }
     }
-    private fun inputCheck(nome: String, cnpjCpf: String, email: String, plano: String, senha: String): Boolean {
-        return !(TextUtils.isEmpty(nome) && TextUtils.isEmpty(cnpjCpf) && TextUtils.isEmpty(email)  && TextUtils.isEmpty(plano) && TextUtils.isEmpty(senha))
+
+    private fun inputCheck(
+        nome: String,
+        cnpjCpf: String,
+        email: String,
+        plano: String,
+        senha: String
+    ): Boolean {
+        return !(TextUtils.isEmpty(nome) && TextUtils.isEmpty(cnpjCpf) && TextUtils.isEmpty(email) && TextUtils.isEmpty(
+            plano
+        ) && TextUtils.isEmpty(senha))
+    }
+
+    private fun radioOptionType(): String {
+        var plano = ""
+        if (binding.registrationTypeCombo.isChecked) {
+            plano = binding.registrationTypeCombo.text.toString()
+        } else if (binding.registrationTypeInternet.isChecked) {
+            plano = binding.registrationTypeInternet.text.toString()
+        } else {
+            plano = binding.registrationTypePhone.text.toString()
+        }
+        return plano
     }
 
     override fun onDestroyView() {

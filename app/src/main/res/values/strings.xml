@@ -19,8 +19,9 @@
     <string name="registration_page_email">Seu E-mail</string>
     <string name="registration_page_password">Senha</string>
     <string name="registration_page_type">Qual Plano deseja cadastrar?</string>
-    <string name="registration_page_type_business">Empresarial</string>
-    <string name="registration_page_type_personal">Pessoal</string>
+    <string name="registration_page_type_phone">Telefone</string>
+    <string name="registration_page_type_internet">Internet</string>
+    <string name="registration_page_type_combo">Combo</string>
     <string name="registration_page_save">Cadastrar</string>
 
     <!--  Dashboard Page  -->
