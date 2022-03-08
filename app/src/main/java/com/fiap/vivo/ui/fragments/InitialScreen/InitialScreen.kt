@@ -8,10 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.fiap.vivo.databinding.InitialScreenBinding
-import com.fiap.vivo.util.CheckCpfCnpj
 import com.fiap.vivo.util.CheckData
 import com.fiap.vivo.util.MaskUnmask
 import com.fiap.vivo.viewmodel.UserViewModel
+
 
 
 /**

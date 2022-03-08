@@ -1,20 +1,14 @@
 package com.fiap.vivo.ui.fragments.registrationScreen
 
-import android.content.Context
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.fiap.vivo.R
 import com.fiap.vivo.databinding.RegistrationScreenBinding
-import com.fiap.vivo.local.model.User
 import com.fiap.vivo.util.IdentificacaoPersistencia
-import com.fiap.vivo.util.InputCheck
 import com.fiap.vivo.util.InsertDataToDatabase
 import com.fiap.vivo.viewmodel.UserViewModel
 

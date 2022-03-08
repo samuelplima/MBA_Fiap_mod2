@@ -1,22 +1,17 @@
 package com.fiap.vivo.ui.fragments.loginScreeen
 
-import android.content.Context
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.fiap.vivo.R
 import com.fiap.vivo.databinding.LoginScreenBinding
-import com.fiap.vivo.databinding.RegistrationScreenBinding
-import com.fiap.vivo.ui.fragments.registrationScreen.RegistrationScreen
 import com.fiap.vivo.util.IdentificacaoPersistencia
 import com.fiap.vivo.util.Login
 import com.fiap.vivo.viewmodel.UserViewModel
+
 
 
 /**
@@ -35,7 +30,6 @@ open class LoginScreen : Fragment() {
     private val binding get() = _binding!!
 
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -50,7 +44,10 @@ open class LoginScreen : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var cnpjCpf = identificacaoPersistencia.identificacaoPersistenciaLogin(binding, this.requireActivity())
+        var cnpjCpf = identificacaoPersistencia.identificacaoPersistenciaLogin(
+            binding,
+            this.requireActivity()
+        )
 
         binding.loginPageWelcomeText.text = "Olá, " + mUserViewModel.findName(cnpjCpf)
 
