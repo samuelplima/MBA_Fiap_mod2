@@ -12,6 +12,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.fiap.vivo.R
 import com.fiap.vivo.databinding.LoginScreenBinding
+import com.fiap.vivo.databinding.RegistrationScreenBinding
+import com.fiap.vivo.ui.fragments.registrationScreen.RegistrationScreen
+import com.fiap.vivo.util.IdentificacaoPersistencia
+import com.fiap.vivo.util.Login
 import com.fiap.vivo.viewmodel.UserViewModel
 
 
@@ -20,11 +24,16 @@ import com.fiap.vivo.viewmodel.UserViewModel
  */
 open class LoginScreen : Fragment() {
 
+    private val login = Login()
+
+    private val identificacaoPersistencia = IdentificacaoPersistencia()
+
     private lateinit var mUserViewModel: UserViewModel
 
     private var _binding: LoginScreenBinding? = null
 
-    val binding get() = _binding!!
+    private val binding get() = _binding!!
+
 
 
     override fun onCreateView(
@@ -40,43 +49,19 @@ open class LoginScreen : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var cnpjCpf = ""
-        val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
-        if (identificacaoPersistencia != null) {
-            cnpjCpf = identificacaoPersistencia.getString("documento", "").toString()
-        }
+
+        var cnpjCpf = identificacaoPersistencia.identificacaoPersistenciaLogin(binding, this.requireActivity())
+
         binding.loginPageWelcomeText.text = "Olá, " + mUserViewModel.findName(cnpjCpf)
 
         binding.loginPageSaveButton.setOnClickListener {
-            login()
-        }
-    }
+            val email = binding.loginPageEmailField.text.toString()
+            val senha = binding.loginPagePasswordField.text.toString()
+            val emailDB = mUserViewModel.findEmail(email)
+            val senhaDB = mUserViewModel.findPassword(senha)
 
-    private fun login(){
-        val email = binding.loginPageEmailField.text.toString()
-        val senha = binding.loginPagePasswordField.text.toString()
-        val emailDB = mUserViewModel.findEmail(email)
-        val senhaDB = mUserViewModel.findPassword(senha)
-
-        if(emailDB == null || senhaDB == null) {
-            Toast.makeText(requireContext(), "Email ou senha invalido", Toast.LENGTH_LONG).show()
+            login.login(emailDB, senhaDB, email, senha, this.requireContext(), findNavController())
         }
-        if (inputCheck(email, senha)) {
-            if(email == emailDB && senha == senhaDB){
-                findNavController().navigate(R.id.action_SecondFragment_to_fourthFragment)
-                Toast.makeText(requireContext(), "Logado com sucesso!", Toast.LENGTH_LONG).show()
-            }
-        } else {
-            Toast.makeText(
-                requireContext(),
-                "Por favor preencha todos os campos!",
-                Toast.LENGTH_LONG
-            ).show()
-        }
-    }
-
-    private fun inputCheck(email : String, senha : String): Boolean {
-        return !(TextUtils.isEmpty(email) && TextUtils.isEmpty(senha))
     }
 
     override fun onDestroyView() {

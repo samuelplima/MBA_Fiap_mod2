@@ -29,6 +29,7 @@ class CheckCpfCnpj {
         if(test != str[10].toString().toInt()) return false
         return true
     }
+
     fun checkCnpj(et: String): Boolean{
         var str = et.replace("-", "").replace("/","").replace(".","")
         var calc: Int
@@ -58,5 +59,7 @@ class CheckCpfCnpj {
         if(test != str[13].toString().toInt()) return false
         return true
     }
+
+
 
 }

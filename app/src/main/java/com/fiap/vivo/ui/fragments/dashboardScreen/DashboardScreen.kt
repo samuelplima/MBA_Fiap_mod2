@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.fiap.vivo.databinding.DashboardScreenBinding
+import com.fiap.vivo.util.BringData
+import com.fiap.vivo.util.IdentificacaoPersistencia
 import com.fiap.vivo.viewmodel.UserViewModel
 
 /**
@@ -18,6 +20,10 @@ import com.fiap.vivo.viewmodel.UserViewModel
  * create an instance of this fragment.
  */
 class DashboardScreen : Fragment() {
+
+    private val identificacaoPersistencia = IdentificacaoPersistencia()
+
+    private val bringData = BringData()
 
     private lateinit var mUserViewModel: UserViewModel
 
@@ -38,27 +44,16 @@ class DashboardScreen : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        bringData()
+        val cnpjCpf = identificacaoPersistencia.identificacaoPersistenciaDashboard(
+            binding,
+            this.requireActivity()
+        )
+        bringData.bringData(cnpjCpf, binding, mUserViewModel)
 
         binding.dashboardButtonLogout.setOnClickListener {
             logout()
         }
-
     }
-
-    private fun bringData(){
-        var cnpjCpf = ""
-        val identificacaoPersistencia = this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
-        if (identificacaoPersistencia != null) {
-            cnpjCpf = identificacaoPersistencia.getString("documento", "").toString()
-        }
-        binding.dashboardPageName.text = "Nome: " + mUserViewModel.findName(cnpjCpf)
-        binding.dashboardPageCpfCnpj.text = "Cpf/Cnpj: " + mUserViewModel.findUser(cnpjCpf)
-        binding.dashboardPageEmail.text = "Email: " + mUserViewModel.findEmailWithCpfCnpj(cnpjCpf)
-        binding.dashboardPagePlan.text = "Plano: " + mUserViewModel.findPlanos(cnpjCpf)
-        binding.dashboardPageSituation.text = "Situação: " + mUserViewModel.findSituacao(cnpjCpf).uppercase()
-        }
-
 
     private fun logout() {
         R.attr.finishOnCloseSystemDialogs

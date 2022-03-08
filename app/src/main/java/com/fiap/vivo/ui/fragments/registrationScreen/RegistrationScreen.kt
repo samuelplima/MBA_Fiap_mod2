@@ -13,6 +13,9 @@ import androidx.navigation.fragment.findNavController
 import com.fiap.vivo.R
 import com.fiap.vivo.databinding.RegistrationScreenBinding
 import com.fiap.vivo.local.model.User
+import com.fiap.vivo.util.IdentificacaoPersistencia
+import com.fiap.vivo.util.InputCheck
+import com.fiap.vivo.util.InsertDataToDatabase
 import com.fiap.vivo.viewmodel.UserViewModel
 
 /**
@@ -21,6 +24,10 @@ import com.fiap.vivo.viewmodel.UserViewModel
  * create an instance of this fragment.
  */
 class RegistrationScreen : Fragment() {
+
+    private val insertDataToDatabase = InsertDataToDatabase()
+
+    private val identificacaoPersistencia = IdentificacaoPersistencia()
 
     private lateinit var mUserViewModel: UserViewModel
 
@@ -43,76 +50,11 @@ class RegistrationScreen : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        identificacaoPersistencia()
+        identificacaoPersistencia.identificacaoPersistenciaRegistration(binding, this.requireActivity())
 
         binding.registrationButtonSave.setOnClickListener {
-            insertDataToDatabase()
+            insertDataToDatabase.insertDataToDatabase(binding, this.requireActivity(), mUserViewModel, this.requireContext(), findNavController())
         }
-
-    }
-
-    fun identificacaoPersistencia() {
-        val identificacaoPersistencia =
-            this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
-        if (identificacaoPersistencia != null) {
-            binding.registrationCpfCnpj.text = identificacaoPersistencia.getString("documento", "")
-        }
-    }
-
-    private fun insertDataToDatabase() {
-        val nome = binding.registrationNameField.text.toString()
-        val email = binding.registrationEmailField.text.toString()
-        val senha = binding.registrationPasswordField.text.toString()
-        var plano = radioOptionType()
-        val situacao = "Em Análise!"
-        var cnpjCpf = ""
-        val identificacaoPersistencia =
-            this.activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
-
-
-        if (identificacaoPersistencia != null) {
-            cnpjCpf = identificacaoPersistencia.getString("documento", "").toString()
-        }
-
-        if (inputCheck(nome, cnpjCpf, email, plano, senha)) {
-            //create user object
-            val user = User(0, nome, cnpjCpf, email, plano, situacao, senha)
-            //add data to database
-            mUserViewModel.addUser(user)
-            Toast.makeText(requireContext(), "Salvo com sucesso!", Toast.LENGTH_LONG).show()
-            //navigate back
-            findNavController().navigate(R.id.action_thirdFragment2_to_FirstFragment)
-        } else {
-            Toast.makeText(
-                requireContext(),
-                "Por favor preencha todos os campos!",
-                Toast.LENGTH_LONG
-            ).show()
-        }
-    }
-
-    private fun inputCheck(
-        nome: String,
-        cnpjCpf: String,
-        email: String,
-        plano: String,
-        senha: String
-    ): Boolean {
-        return !(TextUtils.isEmpty(nome) && TextUtils.isEmpty(cnpjCpf) && TextUtils.isEmpty(email) && TextUtils.isEmpty(
-            plano
-        ) && TextUtils.isEmpty(senha))
-    }
-
-    private fun radioOptionType(): String {
-        var plano = ""
-        if (binding.registrationTypeCombo.isChecked) {
-            plano = binding.registrationTypeCombo.text.toString()
-        } else if (binding.registrationTypeInternet.isChecked) {
-            plano = binding.registrationTypeInternet.text.toString()
-        } else {
-            plano = binding.registrationTypePhone.text.toString()
-        }
-        return plano
     }
 
     override fun onDestroyView() {
