@@ -13,9 +13,8 @@ import com.fiap.vivo.viewmodel.UserViewModel
 class InsertDataToDatabase {
 
     private val radioOptionType = RadioOptionType()
-
+    private val emailValidation = EmailValidation()
     private val identificacaoPersistencia = IdentificacaoPersistencia()
-
     private val inputCheck = InputCheck()
 
     fun insertDataToDatabase(binding: RegistrationScreenBinding, activity: Activity, userViewModel: UserViewModel, context: Context, findNavController: NavController) {
@@ -26,7 +25,7 @@ class InsertDataToDatabase {
         val situacao = "Em Análise!"
         var cnpjCpf = identificacaoPersistencia.identificacaoPersistenciaRegistration(binding, activity)
 
-        if (inputCheck.inputCheckRegistration(nome, cnpjCpf, email, plano, senha)) {
+        if (emailValidation.isValidEmail(email) && inputCheck.inputCheckRegistration(nome, cnpjCpf, email, plano, senha)) {
             val user = User(0, nome, cnpjCpf, email, plano, situacao, senha)
             userViewModel.addUser(user)
             Toast.makeText(context, "Salvo com sucesso!", Toast.LENGTH_LONG).show()
