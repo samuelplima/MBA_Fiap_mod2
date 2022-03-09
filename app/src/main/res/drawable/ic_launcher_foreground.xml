@@ -1,0 +1,8 @@
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="88dp"
+    android:height="88dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108"
+    android:src="@drawable/icon_logo">
+</bitmap>
