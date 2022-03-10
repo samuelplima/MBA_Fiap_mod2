@@ -57,9 +57,13 @@ open class LoginScreen : Fragment() {
             if (!emailValidation.isValidEmail(email)) {
                 binding.loginPageEmailField.setBackground(getResources().getDrawable(R.drawable.error_text_background, null))
             }
-
             login.login(emailDB, senhaDB, email, senha, this.requireContext(), findNavController())
         }
+        binding.loginPagePasswordRecover.setOnClickListener {
+
+
+        }
+
     }
 
     override fun onDestroyView() {

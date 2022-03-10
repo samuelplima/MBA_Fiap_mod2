@@ -1,10 +1,16 @@
 package com.fiap.vivo.ui.fragments.dashboardScreen
 
+import android.Manifest
 import android.R
+import android.content.pm.PackageManager.PERMISSION_GRANTED
 import android.os.Bundle
+import android.telephony.SmsManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat.checkSelfPermission
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -37,6 +43,30 @@ class DashboardScreen : Fragment() {
 
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
+
+        if (checkSelfPermission(this.requireActivity(),
+                Manifest.permission.SEND_SMS)
+            != PERMISSION_GRANTED) {
+            Toast.makeText(this.requireContext(), "n tem permissao", Toast.LENGTH_LONG).show()
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this.requireActivity(),
+                    Manifest.permission.SEND_SMS)) {
+                // Show an explanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+                Toast.makeText(this.requireContext(), "teste1", Toast.LENGTH_LONG).show()
+            } else {
+                // No explanation needed, we can request the permission.
+                ActivityCompat.requestPermissions(this.requireActivity(),
+                    arrayOf(Manifest.permission.SEND_SMS), 1)
+                Toast.makeText(this.requireContext(), "teste2", Toast.LENGTH_LONG).show()
+                sendSms()
+            }
+        } else {
+            Toast.makeText(this.requireContext(), "tem pemissao", Toast.LENGTH_LONG).show()
+            sendSms()
+        }
+
+
         _binding = DashboardScreenBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -62,6 +92,14 @@ class DashboardScreen : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    fun sendSms(){
+        val smsManager = SmsManager.getDefault()
+        val phone = "+5519983852779"
+        val sms = "Olá"
+        smsManager.sendTextMessage(phone, null, sms, null, null)
+        Toast.makeText(this.requireContext(), "Message is sent", Toast.LENGTH_LONG).show()
     }
 
 }
