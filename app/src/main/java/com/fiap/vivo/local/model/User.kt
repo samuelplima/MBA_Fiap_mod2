@@ -17,6 +17,9 @@ data class User(
     @ColumnInfo(name = "CPFCNPJ")
     val cpfCnpj: String,
 
+    @ColumnInfo(name = "TELEFONE")
+    val telefone: String,
+
     @ColumnInfo(name = "EMAIL")
     val email: String,
 

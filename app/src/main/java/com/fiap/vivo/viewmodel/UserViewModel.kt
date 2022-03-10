@@ -56,6 +56,10 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
         return repository.findSituacao(cpfCnpjDB)
     }
 
+    fun findTelefone(cpfCnpjDB: String) : String{
+        return  repository.findTelefone(cpfCnpjDB)
+    }
+
     fun populateDB(){
         repository.populateDB()
     }

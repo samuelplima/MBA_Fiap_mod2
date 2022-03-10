@@ -4,15 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.res.ResourcesCompat
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.fiap.vivo.R
 import com.fiap.vivo.databinding.LoginScreenBinding
-import com.fiap.vivo.util.EmailValidation
-import com.fiap.vivo.util.IdentificacaoPersistencia
-import com.fiap.vivo.util.Login
+import com.fiap.vivo.util.*
 import com.fiap.vivo.viewmodel.UserViewModel
 
 /**
@@ -20,6 +18,8 @@ import com.fiap.vivo.viewmodel.UserViewModel
  */
 open class LoginScreen : Fragment() {
 
+    private val generateSmsCode = GenerateSmsCode()
+    private val sendSMS = SendSMS()
     private val login = Login()
     private val emailValidation = EmailValidation()
     private val identificacaoPersistencia = IdentificacaoPersistencia()
@@ -45,6 +45,7 @@ open class LoginScreen : Fragment() {
             binding,
             this.requireActivity()
         )
+        val smsCode = generateSmsCode.code
 
         binding.loginPageWelcomeText.text = "Olá, " + mUserViewModel.findName(cnpjCpf)
 
@@ -59,8 +60,12 @@ open class LoginScreen : Fragment() {
             }
             login.login(emailDB, senhaDB, email, senha, this.requireContext(), findNavController())
         }
+
         binding.loginPagePasswordRecover.setOnClickListener {
+            val telefone = mUserViewModel.findTelefone(cnpjCpf)
+
             findNavController().navigate(R.id.action_SecondFragment_to_recoverPassword)
+            sendSMS.SMS(this.requireActivity(), this.requireContext(), telefone, smsCode)
         }
 
     }

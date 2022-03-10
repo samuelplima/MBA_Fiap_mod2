@@ -28,8 +28,8 @@
 
     <!--  Recover Page  -->
     <string name="recover_password_page_pin">Digite o código que recebeu aqui:</string>
-    <string name="recover_password_page_resend">Reenciar código</string>
-    <string name="recover_password_page_confirm">Enviar Código</string>
+    <string name="recover_password_page_resend">Reenviar SMS</string>
+    <string name="recover_password_page_confirm">Validar Código</string>
 
     <!--  Dashboard Page  -->
     <string name="dashboard_page_welcome_title">Seja Bem-Vindo(a)</string>

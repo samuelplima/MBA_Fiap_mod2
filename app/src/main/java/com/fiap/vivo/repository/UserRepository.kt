@@ -40,6 +40,10 @@ class UserRepository(private val userDAO: UserDAO) {
         return userDAO.findSituacao(cpfCnpjDB)
     }
 
+    fun findTelefone(cpfCnpjDB: String) : String{
+        return  userDAO.findTelefone(cpfCnpjDB)
+    }
+
     fun populateDB(){
         userDAO.populateDB()
     }

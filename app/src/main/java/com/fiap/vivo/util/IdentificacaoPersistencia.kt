@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import com.fiap.vivo.databinding.DashboardScreenBinding
 import com.fiap.vivo.databinding.LoginScreenBinding
+import com.fiap.vivo.databinding.RecoverPasswordBinding
 import com.fiap.vivo.databinding.RegistrationScreenBinding
 
 class IdentificacaoPersistencia {
@@ -45,5 +46,17 @@ class IdentificacaoPersistencia {
         return value
     }
 
+    fun identificacaoPersistenciaRecover(
+        binding: RecoverPasswordBinding,
+        activity: Activity
+    ): String {
+        var value = ""
+        val identificacaoPersistencia =
+            activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
+        if (identificacaoPersistencia != null) {
+            value = identificacaoPersistencia.getString("documento", "").toString()
+        }
+        return value
+    }
 
 }

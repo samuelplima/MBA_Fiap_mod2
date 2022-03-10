@@ -11,11 +11,12 @@ class InputCheck {
     fun inputCheckRegistration(
         nome: String,
         cnpjCpf: String,
+        telefone: String,
         email: String,
         plano: String,
         senha: String
     ): Boolean {
-        return !(TextUtils.isEmpty(nome) || TextUtils.isEmpty(cnpjCpf) || TextUtils.isEmpty(email) || TextUtils.isEmpty(
+        return !(TextUtils.isEmpty(nome) || TextUtils.isEmpty(cnpjCpf) || TextUtils.isEmpty(telefone) || TextUtils.isEmpty(email) || TextUtils.isEmpty(
             plano
         ) || TextUtils.isEmpty(senha))
     }

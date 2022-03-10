@@ -24,9 +24,10 @@ class InsertDataToDatabase {
         var plano = radioOptionType.radioOptionType(binding)
         val situacao = "Em Análise!"
         var cnpjCpf = identificacaoPersistencia.identificacaoPersistenciaRegistration(binding, activity)
+        val telefone = binding.registrationPhoneField.text.toString()
 
-        if (emailValidation.isValidEmail(email) && inputCheck.inputCheckRegistration(nome, cnpjCpf, email, plano, senha)) {
-            val user = User(0, nome, cnpjCpf, email, plano, situacao, senha)
+        if (emailValidation.isValidEmail(email) && inputCheck.inputCheckRegistration(nome, cnpjCpf, telefone, email, plano, senha)) {
+            val user = User(0, nome, cnpjCpf, telefone, email, plano, situacao, senha)
             userViewModel.addUser(user)
             Toast.makeText(context, "Salvo com sucesso!", Toast.LENGTH_LONG).show()
             findNavController.navigate(R.id.action_thirdFragment2_to_FirstFragment)
