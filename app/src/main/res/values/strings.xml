@@ -18,6 +18,7 @@
     <string name="registration_page_title"><u>Primeiro Acesso</u></string>
     <string name="registration_page_name">Seu Nome</string>
     <string name="registration_page_email">Seu E-mail</string>
+    <string name="registration_page_phone">Seu Telefone</string>
     <string name="registration_page_password">Senha</string>
     <string name="registration_page_type">Qual Plano deseja cadastrar?</string>
     <string name="registration_page_type_phone">Telefone</string>

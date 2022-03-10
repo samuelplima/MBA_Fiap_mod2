@@ -64,8 +64,26 @@
             style="@style/default.layout.field"/>
 
         <TextView
-            android:id="@+id/registrationPasswordLabel"
+            android:id="@+id/registrationPhoneLabel"
             android:layout_below="@id/registrationEmailField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/registration_page_phone"
+            android:inputType="phone"
+            style="@style/default.layout.text"/>
+
+        <EditText
+            android:id="@+id/registrationPhoneField"
+            android:layout_below="@id/registrationPhoneLabel"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:inputType="textEmailAddress"
+            tools:ignore="TouchTargetSizeCheck"
+            style="@style/default.layout.field"/>
+
+        <TextView
+            android:id="@+id/registrationPasswordLabel"
+            android:layout_below="@id/registrationPhoneField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/registration_page_password"
