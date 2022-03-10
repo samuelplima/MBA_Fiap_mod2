@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_SecondFragment_to_fourthFragment"
             app:destination="@id/fourthFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_recoverPassword"
+            app:destination="@id/recoverPassword" />
     </fragment>
     <fragment
         android:id="@+id/thirdFragment2"
@@ -49,4 +52,9 @@
             android:id="@+id/action_fourthFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/recoverPassword"
+        android:name="com.fiap.vivo.ui.fragments.recoverPassword.RecoverPassword"
+        android:label="recover_password"
+        tools:layout="@layout/recover_password" />
 </navigation>

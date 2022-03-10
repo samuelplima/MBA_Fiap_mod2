@@ -60,8 +60,7 @@ open class LoginScreen : Fragment() {
             login.login(emailDB, senhaDB, email, senha, this.requireContext(), findNavController())
         }
         binding.loginPagePasswordRecover.setOnClickListener {
-
-
+            findNavController().navigate(R.id.action_SecondFragment_to_recoverPassword)
         }
 
     }
