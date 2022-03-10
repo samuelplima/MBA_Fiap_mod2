@@ -26,6 +26,11 @@
     <string name="registration_page_type_combo">Combo</string>
     <string name="registration_page_save">Cadastrar</string>
 
+    <!--  Recover Page  -->
+    <string name="recover_password_page_pin">Digite o código que recebeu aqui:</string>
+    <string name="recover_password_page_resend">Reenciar código</string>
+    <string name="recover_password_page_confirm">Enviar Código</string>
+
     <!--  Dashboard Page  -->
     <string name="dashboard_page_welcome_title">Seja Bem-Vindo(a)</string>
     <string name="dashboard_page_button_logout">Sair</string>
