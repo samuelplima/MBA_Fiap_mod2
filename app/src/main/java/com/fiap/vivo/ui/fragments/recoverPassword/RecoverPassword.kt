@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.fiap.vivo.R
@@ -65,13 +66,12 @@ class RecoverPassword : Fragment() {
 
         binding.registrationConfirm.setOnClickListener{
             if(validateSMS.validateSMS(binding)){
-                Toast.makeText(this.requireContext(), "Correto", Toast.LENGTH_LONG).show()
+                Toast.makeText(this.requireContext(), "Código Correto!", Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.action_recoverPassword_to_changePasswordScreen2)
             } else{
-                Toast.makeText(this.requireContext(), "Errado", Toast.LENGTH_LONG).show()
+                Toast.makeText(this.requireContext(), "Código Incorreto!", Toast.LENGTH_LONG).show()
             }
-
         }
-
     }
 
     override fun onDestroyView() {

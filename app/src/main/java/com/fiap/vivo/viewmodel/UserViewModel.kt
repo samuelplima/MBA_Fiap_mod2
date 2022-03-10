@@ -60,6 +60,10 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
         return  repository.findTelefone(cpfCnpjDB)
     }
 
+    fun changePassword(senhaDB: String, cpfCnpjDB: String){
+        repository.changePassword(senhaDB, cpfCnpjDB)
+    }
+
     fun populateDB(){
         repository.populateDB()
     }

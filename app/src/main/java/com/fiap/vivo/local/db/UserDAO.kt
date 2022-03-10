@@ -39,6 +39,10 @@ interface UserDAO {
     @Query("SELECT telefone from user_table where cpfCnpj =:cpfCnpjDB")
     fun findTelefone(cpfCnpjDB: String) : String
 
+    @Query("UPDATE user_table SET senha =:senhaDB WHERE cpfCnpj =:cpfCnpjDB ")
+    fun changePassword(senhaDB: String, cpfCnpjDB: String)
+
+
     /*para fins de testes da aplicação
     *irá popular o banco no primeiro uso para testes dos usuarios ja cadastrados
     */

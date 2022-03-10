@@ -44,6 +44,10 @@ class UserRepository(private val userDAO: UserDAO) {
         return  userDAO.findTelefone(cpfCnpjDB)
     }
 
+    fun changePassword(senhaDB: String, cpfCnpjDB: String){
+        userDAO.changePassword(senhaDB, cpfCnpjDB)
+    }
+
     fun populateDB(){
         userDAO.populateDB()
     }

@@ -56,5 +56,17 @@
         android:id="@+id/recoverPassword"
         android:name="com.fiap.vivo.ui.fragments.recoverPassword.RecoverPassword"
         android:label="recover_password"
-        tools:layout="@layout/recover_password" />
+        tools:layout="@layout/recover_password" >
+        <action
+            android:id="@+id/action_recoverPassword_to_changePasswordScreen2"
+            app:destination="@id/changePasswordScreen2" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordScreen2"
+        android:name="com.fiap.vivo.ui.fragments.ChangePasswordScreen"
+        android:label="ChangePasswordScreen" >
+        <action
+            android:id="@+id/action_changePasswordScreen2_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
 </navigation>
