@@ -5,10 +5,7 @@ import com.fiap.vivo.databinding.RecoverPasswordBinding
 
 class ValidateSMS {
 
-    private val generateSmsCode = GenerateSmsCode()
-
-    fun validateSMS(binding: RecoverPasswordBinding) : Boolean{
-        val smsCode = generateSmsCode.generateRandom().toString()
+    fun validateSMS(binding: RecoverPasswordBinding, smsCode: String) : Boolean{
         val userCode = binding.registrationPhoneField.text.toString()
         return smsCode == userCode
     }

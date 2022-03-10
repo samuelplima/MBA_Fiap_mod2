@@ -45,7 +45,6 @@ open class LoginScreen : Fragment() {
             binding,
             this.requireActivity()
         )
-        val smsCode = generateSmsCode.generateRandom().toString()
 
         binding.loginPageWelcomeText.text = "Olá, " + mUserViewModel.findName(cnpjCpf)
 
@@ -62,11 +61,7 @@ open class LoginScreen : Fragment() {
         }
 
         binding.loginPagePasswordRecover.setOnClickListener {
-            val telefone = mUserViewModel.findTelefone(cnpjCpf)
-
             findNavController().navigate(R.id.action_SecondFragment_to_recoverPassword)
-            sendSMS.SMS(this.requireActivity(), this.requireContext(), telefone, smsCode)
-            Toast.makeText(this.requireContext(), smsCode, Toast.LENGTH_LONG).show()
         }
 
     }
