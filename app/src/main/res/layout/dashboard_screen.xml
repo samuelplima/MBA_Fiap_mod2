@@ -36,8 +36,15 @@
             style="@style/default.layout.text"/>
 
         <TextView
-            android:id="@+id/dashboardPageEmail"
+            android:id="@+id/dashboardPageTelefone"
             android:layout_below="@id/dashboardPageCpfCnpj"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/default.layout.text"/>
+
+        <TextView
+            android:id="@+id/dashboardPageEmail"
+            android:layout_below="@id/dashboardPageTelefone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/default.layout.text"/>
