@@ -11,6 +11,7 @@
     <string name="login_page_title"><u>Já Sou Cadastrado</u></string>
     <string name="login_page_email">E-mail</string>
     <string name="login_page_password">Senha</string>
+    <string name="login_page_password_recover"><u>Esqueci minha senha</u></string>
     <string name="login_page_login">Acessar Conta</string>
 
     <!--  Registration Page  -->
