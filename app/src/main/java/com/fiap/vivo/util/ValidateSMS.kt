@@ -8,7 +8,7 @@ class ValidateSMS {
     private val generateSmsCode = GenerateSmsCode()
 
     fun validateSMS(binding: RecoverPasswordBinding) : Boolean{
-        val smsCode = generateSmsCode.code
+        val smsCode = generateSmsCode.generateRandom().toString()
         val userCode = binding.registrationPhoneField.text.toString()
         return smsCode == userCode
     }

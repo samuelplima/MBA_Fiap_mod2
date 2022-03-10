@@ -57,7 +57,7 @@ class RecoverPassword : Fragment() {
             binding,
             this.requireActivity()
         )
-        val smsCode = generateSmsCode.code
+        val smsCode = generateSmsCode.generateRandom().toString()
 
 
         binding.registrationReSend.setOnClickListener {
