@@ -27,14 +27,19 @@
     <string name="registration_page_save">Cadastrar</string>
 
     <!--  Recover Page  -->
+    <string name="recover_password_page_title"><u>Recuperando Senha...</u></string>
     <string name="recover_password_page_pin">Digite o código que recebeu aqui:</string>
-    <string name="recover_password_page_resend">Reenviar SMS</string>
-    <string name="recover_password_page_confirm">Validar Código</string>
+    <string name="recover_password_page_resend">Enviar Código</string>
+    <string name="recover_password_page_confirm">Confirmar</string>
+
+    <!--  Change Password Page  -->
+    <string name="change_password_page_title"><u>Recuperando Senha...</u></string>
+    <string name="change_password_new">Entre com a nova senha</string>
+    <string name="change_password_new_confirm">Confirme a nova senha</string>
 
     <!--  Dashboard Page  -->
     <string name="dashboard_page_welcome_title">Seja Bem-Vindo(a)</string>
     <string name="dashboard_page_button_logout">Sair</string>
-
 
     <string name="app_name">Vivo</string>
     <string name="action_settings">Settings</string>
