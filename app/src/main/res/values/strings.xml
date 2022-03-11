@@ -27,15 +27,16 @@
     <string name="registration_page_save">Cadastrar</string>
 
     <!--  Recover Page  -->
-    <string name="recover_password_page_title"><u>Recuperando Senha...</u></string>
-    <string name="recover_password_page_pin">Digite o código que recebeu aqui:</string>
+    <string name="recover_password_page_title"><u>Esqueci a Senha</u></string>
+    <string name="recover_password_page_pin">Digite o código aqui:</string>
     <string name="recover_password_page_resend">Enviar Código</string>
     <string name="recover_password_page_confirm">Confirmar</string>
 
     <!--  Change Password Page  -->
-    <string name="change_password_page_title"><u>Recuperando Senha...</u></string>
+    <string name="change_password_page_title"><u>Alterar Senha</u></string>
     <string name="change_password_new">Entre com a nova senha</string>
     <string name="change_password_new_confirm">Confirme a nova senha</string>
+    <string name="change_password_new_save">Salvar</string>
 
     <!--  Dashboard Page  -->
     <string name="dashboard_page_welcome_title">Seja Bem-Vindo(a)</string>

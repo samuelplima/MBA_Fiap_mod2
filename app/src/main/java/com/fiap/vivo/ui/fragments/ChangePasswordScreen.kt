@@ -48,9 +48,9 @@ class ChangePasswordScreen : Fragment() {
             this.requireActivity()
         )
 
-        binding.buttonSave.setOnClickListener {
-            val password = binding.newPassword.text.toString()
-            val password1 = binding.newPassword1.text.toString()
+        binding.changePasswordButtonSave.setOnClickListener {
+            val password = binding.changePasswordNewField.text.toString()
+            val password1 = binding.changePasswordNewConfirmField.text.toString()
 
             if(checkPasswords.checkPasswords(password,password1)){
                 mUserViewModel.changePassword(password, cnpjCpf )

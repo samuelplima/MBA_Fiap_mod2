@@ -51,6 +51,7 @@ class IdentificacaoPersistencia {
         val identificacaoPersistencia =
             activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
         if (identificacaoPersistencia != null) {
+            binding.recoverPasswordCpfCnpj.text = identificacaoPersistencia.getString("documento", "")
             value = identificacaoPersistencia.getString("documento", "").toString()
         }
         return value
@@ -64,6 +65,7 @@ class IdentificacaoPersistencia {
         val identificacaoPersistencia =
             activity?.getSharedPreferences("identificacao", Context.MODE_PRIVATE)
         if (identificacaoPersistencia != null) {
+            binding.changePasswordCpfCnpj.text = identificacaoPersistencia.getString("documento", "")
             value = identificacaoPersistencia.getString("documento", "").toString()
         }
         return value

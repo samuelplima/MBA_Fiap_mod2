@@ -42,12 +42,9 @@ class RecoverPassword : Fragment() {
 
         mUserViewModel = ViewModelProvider(this).get(UserViewModel::class.java)
 
-
         _binding = RecoverPasswordBinding.inflate(inflater, container, false)
 
         return binding.root
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -63,18 +60,18 @@ class RecoverPassword : Fragment() {
         Toast.makeText(this.requireContext(), smsCode, Toast.LENGTH_LONG).show()
 
 
-        binding.registrationReSend.setOnClickListener {
+        binding.recoverPasswordReSend.setOnClickListener {
             sendSMS.SMS(this.requireActivity(), this.requireContext(), mUserViewModel.findTelefone(cnpjCpf), smsCode)
             Toast.makeText(this.requireContext(), smsCode, Toast.LENGTH_LONG).show()
         }
 
-        binding.registrationConfirm.setOnClickListener{
+        binding.recoverPasswordConfirm.setOnClickListener{
             if(validateSMS.validateSMS(binding,smsCode)){
                 Toast.makeText(this.requireContext(), "Código Correto!", Toast.LENGTH_LONG).show()
                 findNavController().navigate(R.id.action_recoverPassword_to_changePasswordScreen2)
             } else{
                 Toast.makeText(this.requireContext(), "Código Incorreto!", Toast.LENGTH_LONG).show()
-                Toast.makeText(this.requireContext(), binding.registrationPhoneField.text.toString(), Toast.LENGTH_LONG).show()
+                Toast.makeText(this.requireContext(), binding.recoverPasswordPhoneField.text.toString(), Toast.LENGTH_LONG).show()
             }
         }
     }
