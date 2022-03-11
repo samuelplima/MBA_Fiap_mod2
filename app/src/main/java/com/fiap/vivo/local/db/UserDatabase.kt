@@ -9,7 +9,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.fiap.vivo.local.model.User
 
-@Database(entities = [User::class], version = 1, exportSchema = false)
+@Database(entities = [User::class], version = 2, exportSchema = false)
 abstract class UserDatabase : RoomDatabase() {
 
         abstract fun userDao() : UserDAO
@@ -24,14 +24,14 @@ abstract class UserDatabase : RoomDatabase() {
                     return tempInstance
                 }
                 synchronized(this){
-                    val instance = Room.databaseBuilder(
-                        context.applicationContext,
-                        UserDatabase::class.java,
-                        "user_database"
-                    ).allowMainThreadQueries().build()
+                    val instance = Room.databaseBuilder(context.applicationContext,
+                        UserDatabase::class.java, "user_database")
+                        .fallbackToDestructiveMigration()
+                        .allowMainThreadQueries()
+                        .build()
                     INSTANCE = instance
                     return  instance
                 }
             }
-        }
+        }2017710508
 }
