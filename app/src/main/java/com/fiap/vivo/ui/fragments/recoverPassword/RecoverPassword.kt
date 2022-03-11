@@ -54,24 +54,27 @@ class RecoverPassword : Fragment() {
             binding,
             this.requireActivity()
         )
-        var smsCode = generateSmsCode.generateRandom().toString()
-        val telefone = mUserViewModel.findTelefone(cnpjCpf)
-        sendSMS.SMS(this.requireActivity(), this.requireContext(), telefone, smsCode)
-        Toast.makeText(this.requireContext(), smsCode, Toast.LENGTH_LONG).show()
-
 
         binding.recoverPasswordReSend.setOnClickListener {
-            sendSMS.SMS(this.requireActivity(), this.requireContext(), mUserViewModel.findTelefone(cnpjCpf), smsCode)
-            Toast.makeText(this.requireContext(), smsCode, Toast.LENGTH_LONG).show()
+            generateSmsCode.generateRandom()
+            val smsCode = generateSmsCode.smsCode
+
+            sendSMS.SMS(
+                this.requireActivity(),
+                this.requireContext(),
+                mUserViewModel.findTelefone(cnpjCpf),
+                smsCode
+            )
         }
 
-        binding.recoverPasswordConfirm.setOnClickListener{
-            if(validateSMS.validateSMS(binding,smsCode)){
+        binding.recoverPasswordConfirm.setOnClickListener {
+            val smsCode = generateSmsCode.smsCode
+
+            if (validateSMS.validateSMS(binding, smsCode)) {
                 Toast.makeText(this.requireContext(), "Código Correto!", Toast.LENGTH_LONG).show()
                 findNavController().navigate(R.id.action_recoverPassword_to_changePasswordScreen2)
-            } else{
+            } else {
                 Toast.makeText(this.requireContext(), "Código Incorreto!", Toast.LENGTH_LONG).show()
-                Toast.makeText(this.requireContext(), binding.recoverPasswordPhoneField.text.toString(), Toast.LENGTH_LONG).show()
             }
         }
     }

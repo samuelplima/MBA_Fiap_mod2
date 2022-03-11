@@ -18,8 +18,6 @@ import com.fiap.vivo.viewmodel.UserViewModel
  */
 open class LoginScreen : Fragment() {
 
-    private val generateSmsCode = GenerateSmsCode()
-    private val sendSMS = SendSMS()
     private val login = Login()
     private val emailValidation = EmailValidation()
     private val identificacaoPersistencia = IdentificacaoPersistencia()
@@ -55,7 +53,12 @@ open class LoginScreen : Fragment() {
             val senhaDB = mUserViewModel.findPassword(senha)
 
             if (!emailValidation.isValidEmail(email)) {
-                binding.loginPageEmailField.setBackground(getResources().getDrawable(R.drawable.error_text_background, null))
+                binding.loginPageEmailField.setBackground(
+                    getResources().getDrawable(
+                        R.drawable.error_text_background,
+                        null
+                    )
+                )
             }
             login.login(emailDB, senhaDB, email, senha, this.requireContext(), findNavController())
         }

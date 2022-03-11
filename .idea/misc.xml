@@ -46,6 +46,7 @@
         <entry key="app/src/main/res/layout/fragment_third.xml" value="0.35597826086956524" />
         <entry key="app/src/main/res/layout/initial_screen.xml" value="0.35625" />
         <entry key="app/src/main/res/layout/login_screen.xml" value="0.35625" />
+        <entry key="app/src/main/res/layout/recover_password.xml" value="0.33" />
         <entry key="app/src/main/res/layout/registration_screen.xml" value="0.5" />
       </map>
     </option>

@@ -29,7 +29,7 @@
     <!--  Recover Page  -->
     <string name="recover_password_page_title"><u>Esqueci a Senha</u></string>
     <string name="recover_password_page_pin">Digite o código aqui:</string>
-    <string name="recover_password_page_resend">Enviar Código</string>
+    <string name="recover_password_page_resend">Receber Código</string>
     <string name="recover_password_page_confirm">Confirmar</string>
 
     <!--  Change Password Page  -->
