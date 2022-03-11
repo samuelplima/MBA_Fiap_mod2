@@ -69,7 +69,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/registration_page_phone"
-            android:inputType="phone"
             style="@style/default.layout.text"/>
 
         <EditText
