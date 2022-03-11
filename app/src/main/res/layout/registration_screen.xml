@@ -78,6 +78,7 @@
             android:layout_height="44dp"
             android:inputType="textEmailAddress"
             tools:ignore="TouchTargetSizeCheck"
+            android:maxLength="1111"
             style="@style/default.layout.field"/>
 
         <TextView
