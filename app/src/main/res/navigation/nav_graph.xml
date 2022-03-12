@@ -7,22 +7,66 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.fiap.vivon.FirstFragment"
+        android:name="com.fiap.vivo.ui.fragments.InitialScreen.InitialScreen"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/initial_screen">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_thirdFragment2"
+            app:destination="@id/thirdFragment2" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.fiap.vivon.SecondFragment"
+        android:name="com.fiap.vivo.ui.fragments.loginScreeen.LoginScreen"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/login_screen">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_fourthFragment"
+            app:destination="@id/fourthFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_recoverPassword"
+            app:destination="@id/recoverPassword" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment2"
+        android:name="com.fiap.vivo.ui.fragments.registrationScreen.RegistrationScreen"
+        android:label="fragment_third"
+        tools:layout="@layout/registration_screen" >
+        <action
+            android:id="@+id/action_thirdFragment2_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fourthFragment"
+        android:name="com.fiap.vivo.ui.fragments.dashboardScreen.DashboardScreen"
+        android:label="fragment_fourth"
+        tools:layout="@layout/dashboard_screen" >
+        <action
+            android:id="@+id/action_fourthFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recoverPassword"
+        android:name="com.fiap.vivo.ui.fragments.recoverPassword.RecoverPassword"
+        android:label="recover_password"
+        tools:layout="@layout/recover_password" >
+        <action
+            android:id="@+id/action_recoverPassword_to_changePasswordScreen2"
+            app:destination="@id/changePasswordScreen2" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordScreen2"
+        android:name="com.fiap.vivo.ui.fragments.changePasswordScreen.ChangePasswordScreen"
+        android:label="ChangePasswordScreen" >
+        <action
+            android:id="@+id/action_changePasswordScreen2_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>

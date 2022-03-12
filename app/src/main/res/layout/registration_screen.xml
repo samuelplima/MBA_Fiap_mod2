@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.fiap.vivo.ui.fragments.registrationScreen.RegistrationScreen">
+
+        <TextView
+            android:id="@+id/registrationPageTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/registration_page_title"
+            android:layout_marginTop="60dp"
+            style="@style/default.layout.title"/>
+
+        <TextView
+            android:id="@+id/registrationCpfCnpj"
+            android:layout_below="@id/registrationPageTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textAlignment="center"
+            style="@style/default.layout.title"/>
+
+        <TextView
+            android:id="@+id/registrationNameLabel"
+            android:layout_below="@id/registrationCpfCnpj"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/registration_page_name"
+            style="@style/default.layout.text"/>
+
+        <EditText
+            android:id="@+id/registrationNameField"
+            android:layout_below="@id/registrationNameLabel"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            tools:ignore="TouchTargetSizeCheck"
+            android:inputType="textPersonName"
+            style="@style/default.layout.field"/>
+
+        <TextView
+            android:id="@+id/registrationEmailLabel"
+            android:layout_below="@id/registrationNameField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/registration_page_email"
+            style="@style/default.layout.text"/>
+
+        <EditText
+            android:id="@+id/registrationEmailField"
+            android:layout_below="@id/registrationEmailLabel"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:inputType="textEmailAddress"
+            tools:ignore="TouchTargetSizeCheck"
+            style="@style/default.layout.field"/>
+
+        <TextView
+            android:id="@+id/registrationPhoneLabel"
+            android:layout_below="@id/registrationEmailField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/registration_page_phone"
+            style="@style/default.layout.text"/>
+
+        <EditText
+            android:id="@+id/registrationPhoneField"
+            android:layout_below="@id/registrationPhoneLabel"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:inputType="textEmailAddress"
+            tools:ignore="TouchTargetSizeCheck"
+            android:maxLength="11"
+            style="@style/default.layout.field"/>
+
+        <TextView
+            android:id="@+id/registrationPasswordLabel"
+            android:layout_below="@id/registrationPhoneField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/registration_page_password"
+            style="@style/default.layout.text"/>
+
+        <EditText
+            android:id="@+id/registrationPasswordField"
+            android:layout_below="@id/registrationPasswordLabel"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:inputType="textPassword"
+            tools:ignore="TouchTargetSizeCheck"
+            style="@style/default.layout.field"/>
+
+        <TextView
+            android:id="@+id/registrationPersonNameLabel"
+            android:layout_below="@id/registrationPasswordField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/registration_page_type"
+            style="@style/default.layout.text"/>
+
+        <RadioGroup
+            android:id="@+id/registrationType"
+            android:layout_below="@id/registrationPasswordField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="15dp">
+                <RadioButton
+                    android:id="@+id/registrationTypePhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:text="@string/registration_page_type_phone"
+                    android:inputType="text"
+                    style="@style/default.layout.radiobutton"/>
+
+                <RadioButton
+                    android:id="@+id/registrationTypeInternet"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginVertical="15dp"
+                    android:inputType="text"
+                    android:text="@string/registration_page_type_internet"
+                    style="@style/default.layout.radiobutton"/>
+
+                <RadioButton
+                    android:id="@+id/registrationTypeCombo"
+                    style="@style/default.layout.radiobutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:inputType="text"
+                    android:text="@string/registration_page_type_combo" />
+
+            </LinearLayout>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/registrationButtonSave"
+            android:layout_below="@id/registrationType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:text="@string/registration_page_save"
+            tools:ignore="TouchTargetSizeCheck"
+            style="@style/default.layout.button.primary"/>
+
+    </LinearLayout>
+</ScrollView>
