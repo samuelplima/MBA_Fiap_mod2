@@ -5,8 +5,10 @@ import com.fiap.vivo.databinding.RecoverPasswordBinding
 
 class ValidateSMS {
 
-    fun validateSMS(binding: RecoverPasswordBinding, smsCode: String) : Boolean{
-        val userCode = binding.recoverPasswordPhoneField.text.toString()
+    lateinit var userCode: String
+    lateinit var smsCode: String
+
+    fun validateSMS(): Boolean {
         return smsCode == userCode
     }
 
