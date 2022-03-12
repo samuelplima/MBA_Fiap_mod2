@@ -14,18 +14,18 @@ import org.junit.runner.RunWith
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class fluxoCpfTest {
+class fluxoValidacaoCnpjTest {
 
     @Rule
     @JvmField
     var mActivityTestRule = ActivityTestRule(MainActivity::class.java)
 
     @Test
-    fun cpfUsuarioInvalidoTest() {
+    fun cnpjUsuarioInvalidoTest() {
         Thread.sleep(1000)
 
         onView(withId(R.id.requireCpfCnpjField)).perform(
-            replaceText("431.416.788-21"),
+            replaceText("32.473.878/0001-31"),
             closeSoftKeyboard()
         )
         onView(withId(R.id.searchLoginButton)).perform(click())
@@ -34,29 +34,29 @@ class fluxoCpfTest {
     }
 
     @Test
-    fun cadastrarNovoUsuarioTest() {
+    fun buscarEmpresaComCnpjCadastradoTest() {
         Thread.sleep(1000)
 
         onView(withId(R.id.requireCpfCnpjField)).perform(
-            replaceText("431.416.788-20"),
-            closeSoftKeyboard()
-        )
-        onView(withId(R.id.searchLoginButton)).perform(click())
-        Thread.sleep(500)
-        onView(withId(R.id.registrationNameField)).check(ViewAssertions.matches(isDisplayed()))
-    }
-
-    @Test
-    fun buscarUsuarioComCpfCadastradoTest() {
-        Thread.sleep(1000)
-
-        onView(withId(R.id.requireCpfCnpjField)).perform(
-            replaceText("243.474.303-02"),
+            replaceText("44.444.444/4444-44"),
             closeSoftKeyboard()
         )
         onView(withId(R.id.searchLoginButton)).perform(click())
         Thread.sleep(500)
         onView(withId(R.id.loginPageTitle)).check(ViewAssertions.matches(isDisplayed()))
+    }
+
+    @Test
+    fun buscarEmpresaComCnpjVazioTest() {
+        Thread.sleep(1000)
+
+        onView(withId(R.id.requireCpfCnpjField)).perform(
+            replaceText(""),
+            closeSoftKeyboard()
+        )
+        onView(withId(R.id.searchLoginButton)).perform(click())
+        Thread.sleep(500)
+        onView(withId(R.id.docCheck)).check(ViewAssertions.matches(isDisplayed()))
     }
 
 }
