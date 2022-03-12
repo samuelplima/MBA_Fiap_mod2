@@ -59,8 +59,6 @@ class RecoverPassword : Fragment() {
             generateSmsCode.generateRandom()
             val smsCode = generateSmsCode.smsCode
 
-            Toast.makeText(this.requireContext(), smsCode, Toast.LENGTH_LONG).show()
-
             sendSMS.SMS(
                 this.requireActivity(),
                 this.requireContext(),

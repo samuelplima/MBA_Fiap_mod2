@@ -1,4 +1,4 @@
-package com.fiap.vivo.ui.fragments
+package com.fiap.vivo.ui.fragments.changePasswordScreen
 
 import android.os.Bundle
 import android.view.LayoutInflater

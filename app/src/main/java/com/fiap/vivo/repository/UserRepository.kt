@@ -1,7 +1,7 @@
 package com.fiap.vivo.repository
 
-import com.fiap.vivo.local.db.UserDAO
-import com.fiap.vivo.local.model.User
+import com.fiap.vivo.data.db.UserDAO
+import com.fiap.vivo.data.model.User
 
 
 class UserRepository(private val userDAO: UserDAO) {

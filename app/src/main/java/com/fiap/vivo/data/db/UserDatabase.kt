@@ -1,13 +1,10 @@
-package com.fiap.vivo.local.db
+package com.fiap.vivo.data.db
 
 import android.content.Context
-import android.provider.Telephony
-import android.telephony.SmsManager
-import android.widget.Toast
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.fiap.vivo.local.model.User
+import com.fiap.vivo.data.model.User
 
 @Database(entities = [User::class], version = 2, exportSchema = false)
 abstract class UserDatabase : RoomDatabase() {

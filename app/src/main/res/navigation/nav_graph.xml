@@ -63,7 +63,7 @@
     </fragment>
     <fragment
         android:id="@+id/changePasswordScreen2"
-        android:name="com.fiap.vivo.ui.fragments.ChangePasswordScreen"
+        android:name="com.fiap.vivo.ui.fragments.changePasswordScreen.ChangePasswordScreen"
         android:label="ChangePasswordScreen" >
         <action
             android:id="@+id/action_changePasswordScreen2_to_FirstFragment"

@@ -3,8 +3,8 @@ package com.fiap.vivo.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.fiap.vivo.local.model.User
-import com.fiap.vivo.local.db.UserDatabase
+import com.fiap.vivo.data.model.User
+import com.fiap.vivo.data.db.UserDatabase
 import com.fiap.vivo.repository.UserRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -4,10 +4,9 @@ import android.app.Activity
 import android.content.Context
 import android.widget.Toast
 import androidx.navigation.NavController
-import androidx.navigation.fragment.findNavController
 import com.fiap.vivo.R
 import com.fiap.vivo.databinding.RegistrationScreenBinding
-import com.fiap.vivo.local.model.User
+import com.fiap.vivo.data.model.User
 import com.fiap.vivo.viewmodel.UserViewModel
 
 class InsertDataToDatabase {
