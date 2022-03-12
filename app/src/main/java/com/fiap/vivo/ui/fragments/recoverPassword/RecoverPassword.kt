@@ -59,6 +59,8 @@ class RecoverPassword : Fragment() {
             generateSmsCode.generateRandom()
             val smsCode = generateSmsCode.smsCode
 
+            Toast.makeText(this.requireContext(), smsCode, Toast.LENGTH_LONG).show()
+
             sendSMS.SMS(
                 this.requireActivity(),
                 this.requireContext(),
@@ -68,9 +70,11 @@ class RecoverPassword : Fragment() {
         }
 
         binding.recoverPasswordConfirm.setOnClickListener {
-            val smsCode = generateSmsCode.smsCode
+            validateSMS.smsCode = generateSmsCode.smsCode
+            validateSMS.userCode = binding.recoverPasswordPhoneField.text.toString()
 
-            if (validateSMS.validateSMS(binding, smsCode)) {
+
+            if (validateSMS.validateSMS()) {
                 Toast.makeText(this.requireContext(), "Código Correto!", Toast.LENGTH_LONG).show()
                 findNavController().navigate(R.id.action_recoverPassword_to_changePasswordScreen2)
             } else {
