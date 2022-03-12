@@ -49,10 +49,10 @@ interface UserDAO {
     @Query("INSERT INTO user_table (name, cpfCnpj, telefone, email, planos, situacao, senha) " +
                  "VALUES " +
                  "  (\"Brock Reed\",\"44.444.444/4444-44\",\"19999999999\",\"nonummy@protonmail.ca\",\"Internet\",\"ativo\",\"JQA88GTF6LB\"), " +
-                 "  (\"Raphael Mcgee\",\"75.755.746/0001-04\",\"19999999999\",\"id.risus@google.org\",\"Telefone\",\"inativo\",\"QIQ88JCO6NC\"), " +
-                 "  (\"Chava Mcclure\",\"14.277.157/0001-73\",\"19999999999\",\"nunc.risus.varius@yahoo.com\",\"Combo\",\"ativo\",\"HWO98GUR9WJ\"), " +
-                 "  (\"Regina Bright\",\"54.186.204/0001-98\",\"19999999999\",\"felis.eget@google.org\",\"Internet\",\"inativo\",\"TBR84NRN4LJ\"), " +
-                 "  (\"Darrel Dawson\",\"26.385.632/0001-04\",\"19999999999\",\"cras.dolor.dolor@yahoo.org\",\"Telefone\",\"ativo\",\"ISL66WIZ2PY\"), " +
+                 "  (\"Raphael Mcgee\",\"55.555.555/5555-55\",\"19999999999\",\"id.risus@google.org\",\"Telefone\",\"inativo\",\"QIQ88JCO6NC\"), " +
+                 "  (\"Chava Mcclure\",\"22.222.222/2222-22\",\"19999999999\",\"nunc.risus.varius@yahoo.com\",\"Combo\",\"ativo\",\"HWO98GUR9WJ\"), " +
+                 "  (\"Regina Bright\",\"33.333.333/3333-33\",\"19999999999\",\"felis.eget@google.org\",\"Internet\",\"inativo\",\"TBR84NRN4LJ\"), " +
+                 "  (\"Darrel Dawson\",\"11.111.111/1111-11\",\"19999999999\",\"cras.dolor.dolor@yahoo.org\",\"Telefone\",\"ativo\",\"ISL66WIZ2PY\"), " +
                  "  (\"Dylan Kane\",\"332.594.723-98\",\"19999999999\",\"lacus.nulla.tincidunt@aol.edu\",\"Combo\",\"inativo\",\"UFU63HYS5OB\"), " +
                  "  (\"Wylie Mullins\",\"243.474.303-02\",\"19999999999\",\"suspendisse.sed.dolor@icloud.com\",\"Telefone\",\"ativo\",\"CKS80RHW4UC\"), " +
                  "  (\"Lawrence Kelley\",\"068.560.871-95\",\"19999999999\",\"sed.sapien@outlook.org\",\"Combo\",\"inativo\",\"ILN13EOO2JM\"), " +
